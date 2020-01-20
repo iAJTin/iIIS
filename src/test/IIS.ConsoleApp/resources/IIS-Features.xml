@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<IIS xmlns="http://schemas.syntec.com/utilities/iis/configurator/v1.0">
+  <Configuration>
+    <Features>
+      <Feature Name="WebServer"/>
+      <Feature Name="CommonHttpFeatures"/>
+      <Feature Name="HttpErrors"/>
+      <Feature Name="HttpRedirect"/>
+      <Feature Name="NetFxExtensibility"/>
+      <Feature Name="HealthAndDiagnostics"/>
+      <Feature Name="HttpLogging"/>
+      <Feature Name="HttpTracing"/>
+      <Feature Name="Security"/>
+      <Feature Name="RequestFiltering"/>
+      <Feature Name="IPSecurity"/>
+      <Feature Name="Performance"/>
+      <Feature Name="WebServerManagementTools"/>
+      <Feature Name="IIS6ManagementCompatibility"/>
+      <Feature Name="Metabase"/>
+      <Feature Name="StaticContent"/>
+      <Feature Name="DefaultDocument"/>
+      <Feature Name="DirectoryBrowsing"/>
+      <Feature Name="ISAPIExtensions"/>
+      <Feature Name="ISAPIFilter"/>
+      <Feature Name="ASPNET"/>
+      <Feature Name="CustomLogging"/>
+      <Feature Name="BasicAuthentication"/>
+      <Feature Name="HttpCompressionStatic"/>
+      <Feature Name="ManagementConsole"/>
+      <Feature Name="ManagementService"/>
+      <Feature Name="WMICompatibility"/>
+      <Feature Name="LegacyScripts"/>
+      <Feature Name="WindowsAuthentication"/>
+      <Feature Name="ASPNET45"/>
+    </Features>
+  </Configuration>
+</IIS>

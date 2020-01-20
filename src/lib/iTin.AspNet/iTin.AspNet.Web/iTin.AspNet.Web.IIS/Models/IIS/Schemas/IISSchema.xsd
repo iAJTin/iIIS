@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema id="IISConfigurationSchema"
+           targetNamespace="http://schemas.itin.com/utilities/iis/configurator/v1.0"
+           elementFormDefault="qualified"
+           xmlns="http://schemas.itin.com/utilities/iis/configurator/v1.0"
+           xmlns:mstns="http://schemas.itin.com/utilities/iis/configurator/v1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           version="1.0">
+
+  <!-- Root -->
+  <xs:element name="IIS" type="IISModel" />
+
+  <!-- IIS -->
+  <xs:complexType name="IISModel" id="IISModel">
+    <xs:annotation xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:documentation xml:lang="en">
+        Root element of a Syntec internet information services configuration (SIISC) configuration file that contains the features collection to install.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Configuration" type="ConfigurationModel" minOccurs="0" maxOccurs="1">
+        <xs:annotation xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:documentation xml:lang="en">
+            Contains the configuration node of internet information services (IIS).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- IIS: Configuration -->
+  <xs:complexType name="ConfigurationModel" id="ConfigurationModel">
+    <xs:sequence>
+      <xs:element name="Features" type="FeaturesModelCollection" minOccurs="0" maxOccurs="1">
+        <xs:annotation xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:documentation xml:lang="en">
+            Collection of available internet information services features. Each element represents a internet information services feature.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Configuration: Features -->
+  <xs:complexType name="FeaturesModelCollection" id="FeaturesModelCollection">
+    <xs:sequence>
+      <xs:element name="Feature" type="FeatureModel"  minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation xmlns="http://www.w3.org/2001/XMLSchema">
+          <xs:documentation xml:lang="en">
+            Represents a internet information services feature.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Features: Feature -->
+  <xs:complexType name="FeatureModel" id="FeatureModel">
+    <xs:attribute name="Name" type="KnownFeature" use="required">
+      <xs:annotation xmlns="http://www.w3.org/2001/XMLSchema">
+        <xs:documentation xml:lang="en">
+          Feature name.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <!-- Feature: Name: KnownFeature: Defines feature names -->
+  <xs:simpleType id="KnownFeature" name="KnownFeature">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WebServer">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            WebServer
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CommonHttpFeatures">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            CommonHttpFeatures
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HttpErrors">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            HttpErrors
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HttpRedirect">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            HttpRedirect
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NetFxExtensibility">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            NetFxExtensibility
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HealthAndDiagnostics">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            HealthAndDiagnostics
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HttpLogging">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            HttpLogging
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HttpTracing">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            HttpTracing
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Security">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Security
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RequestFiltering">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            RequestFiltering
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IPSecurity">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            IPSecurity
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Performance">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Performance
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WebServerManagementTools">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            WebServerManagementTools
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IIS6ManagementCompatibility">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            IIS6ManagementCompatibility
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Metabase">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Metabase
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="StaticContent">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            StaticContent
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DefaultDocument">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            DefaultDocument
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DirectoryBrowsing">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            DirectoryBrowsing
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISAPIExtensions">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            ISAPIExtensions
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISAPIFilter">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            ISAPIFilter
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ASPNET">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            ASPNET
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CustomLogging">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            CustomLogging
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BasicAuthentication">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            BasicAuthentication
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HttpCompressionStatic">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            HttpCompressionStatic
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ManagementConsole">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            ManagementConsole
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ManagementService">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            ManagementService
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WMICompatibility">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            WMICompatibility
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LegacyScripts">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            LegacyScripts
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WindowsAuthentication">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            WindowsAuthentication
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ASPNET45">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            ASPNET45
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
