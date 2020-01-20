@@ -3,9 +3,9 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
 {
     using System;
 
-    using iTin.Core;
-    using iTin.Core.ComponentModel;
-    using iTin.Core.Helpers;
+    using iTin.Core.Min;
+    using iTin.Core.Min.ComponentModel;
+    using iTin.Core.Min.Helpers;
 
     using Design;
     using Enums;
@@ -23,6 +23,13 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
         /// Occurs when the command associated with a feature changed has been executed.
         /// </summary>
         public event EventHandler<NotifyFeatureCommandExecutedEventArgs> NotifyFeatureCommandExecuted;
+        #endregion
+
+        #region [public] {event} (EventHandler<NotifyFeatureCommandExecutingEventArgs>) NotifyFeatureCommandExecuting: Occurs when the command starts with the command associated with a modified feature
+        /// <summary>
+        /// Occurs when the command starts with the command associated with a modified feature.
+        /// </summary>
+        public event EventHandler<NotifyFeatureCommandExecutingEventArgs> NotifyFeatureCommandExecuting;
         #endregion
 
         #endregion
@@ -78,6 +85,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
         {
             try
             {
+                OnNotifyFeatureCommandExecuting(new NotifyFeatureCommandExecutingEventArgs(Feature));
                 string runResult = SystemHelper.RunCommand("dism", Arguments == null ? Command : $"{Command} /{Arguments}");
                 OnNotifyFeatureCommandExecuted(new NotifyFeatureCommandExecutedEventArgs(Feature, ResultBase.SuccessResult, runResult));
 
@@ -160,6 +168,14 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
         /// </summary>
         /// <param name="e">A <see cref="NotifyFeatureCommandExecutedEventArgs"/> with the event data.</param>
         protected virtual void OnNotifyFeatureCommandExecuted(NotifyFeatureCommandExecutedEventArgs e) => NotifyFeatureCommandExecuted?.Invoke(this, e);
+        #endregion
+
+        #region [protected] {virtual} (void) OnNotifyFeatureCommandExecuting(NotifyFeatureCommandExecutingEventArgs): Generates the NotifyFeatureCommandExecuting event
+        /// <summary>
+        /// Generates the <see cref="NotifyFeatureCommandExecuting"/> event.
+        /// </summary>
+        /// <param name="e">A <see cref="NotifyFeatureCommandExecutingEventArgs"/> with the event data.</param>
+        protected virtual void OnNotifyFeatureCommandExecuting(NotifyFeatureCommandExecutingEventArgs e) => NotifyFeatureCommandExecuting?.Invoke(this, e);
         #endregion
 
         #endregion

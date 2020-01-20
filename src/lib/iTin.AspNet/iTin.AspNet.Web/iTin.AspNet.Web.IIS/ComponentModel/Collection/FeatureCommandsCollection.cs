@@ -7,14 +7,14 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
     using System.Diagnostics;
     using System.Linq;
 
-    using iTin.Core.ComponentModel;
+    using iTin.Core.Min.ComponentModel;
 
     using Design;
 
     /// <summary>
     /// Class that defines a commands collection.
     /// </summary>
-    public class FeatureCommandsCollection : Collection<ICommand>, IExecute
+    public class FeatureCommandsCollection : Collection<ICommand>
     {
         #region private members
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -30,26 +30,43 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
         public event EventHandler<NotifyFeatureCommandCollectionExecutedEventArgs> NotifyFeatureCommandCollectionExecuted;
         #endregion
 
+        #region [public] {event} (EventHandler<NotifyFeatureCommandCollectionExecuting>) NotifyFeatureCommandCollectionExecuting: Occurs when the execution of a command associated with a feature starts
+        /// <summary>
+        /// Occurs when the execution of a command associated with a feature starts.
+        /// </summary>
+        public event EventHandler<NotifyFeatureCommandCollectionExecutingEventArgs> NotifyFeatureCommandCollectionExecuting;
         #endregion
 
-        #region interfaces
+        #region [public] {event} (EventHandler<NotifyFeatureCommandsCollectionFinishEventArgs>) NotifyFeatureCommandsCollectionFinish: Occurs immediately after the execution of the last command in the collection
+        /// <summary>
+        /// Occurs immediately after the execution of the last command in the collection.
+        /// </summary>
+        public event EventHandler<NotifyFeatureCommandsCollectionFinishEventArgs> NotifyFeatureCommandsCollectionFinish;
+        #endregion
 
-        #region IExecute
+        #region [public] {event} (EventHandler<NotifyFeatureCommandsCollectionStartEventArgs>) NotifyFeatureCommandsCollectionStart: Occurs immediately before the execution of the first command of the collection
+        /// <summary>
+        /// Occurs immediately before the execution of the first command of the collection.
+        /// </summary>
+        public event EventHandler<NotifyFeatureCommandsCollectionStartEventArgs> NotifyFeatureCommandsCollectionStart;
+        #endregion
+
+        #endregion
 
         #region public methods
 
-        #region [public] (IResult) Execute(): Executes the command
+        #region [public] (void) Process(): Process all the commands in the collection
         /// <summary>
-        /// Executes the command.
+        /// Process all the commands in the collection.
         /// </summary>
-        /// <returns>
-        /// Operation result
-        /// </returns>
-        public IResult Execute()
+        public void Process()
         {
             var resultTable = new Dictionary<ICommand, IResult>();
 
             _index = 0;
+
+            OnNotifyFeatureCommandsCollectionStart(new NotifyFeatureCommandsCollectionStartEventArgs(this));
+
             foreach (ICommand command in this)
             {
                 if (!(command is FeatureCommand featureCommand))
@@ -58,19 +75,13 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
                 }
 
                 featureCommand.NotifyFeatureCommandExecuted += NotifyFeatureCommandExecuted;
+                featureCommand.NotifyFeatureCommandExecuting += NotifyFeatureCommandExecuting;
+
                 resultTable.Add(featureCommand, command.Execute());
             }
 
-            bool allCorrectly = resultTable.Values.All(t => t.Success == true);
-
-            return allCorrectly
-                ? ResultBase.SuccessResult
-                : ResultBase.ErrorResult;
+            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success == true) ? ResultBase.SuccessResult : ResultBase.ErrorResult));
         }
-        #endregion
-
-        #endregion
-
         #endregion
 
         #endregion
@@ -85,14 +96,43 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
         protected virtual void OnNotifyFeatureCommandCollectionExecuted(NotifyFeatureCommandCollectionExecutedEventArgs e) => NotifyFeatureCommandCollectionExecuted?.Invoke(this, e);
         #endregion
 
+        #region [protected] {virtual} (void) OnNotifyFeatureCommandCollectionExecuting(NotifyFeatureCommandCollectionExecutingEventArgs): Generates the NotifyFeatureCommandCollectionExecuting event
+        /// <summary>
+        /// Generates the <see cref="NotifyFeatureCommandCollectionExecuting"/> event.
+        /// </summary>
+        /// <param name="e">A <see cref="NotifyFeatureCommandCollectionExecutingEventArgs"/> with the event data.</param>
+        protected virtual void OnNotifyFeatureCommandCollectionExecuting(NotifyFeatureCommandCollectionExecutingEventArgs e) => NotifyFeatureCommandCollectionExecuting?.Invoke(this, e);
+        #endregion
+
+        #region [protected] {virtual} (void) OnNotifyFeatureCommandsCollectionFinish(NotifyFeatureCommandsCollectionFinishEventArgs): Generates the NotifyFeatureCommandsCollectionFinish event
+        /// <summary>
+        /// Generates the <see cref="NotifyFeatureCommandsCollectionFinish"/> event.
+        /// </summary>
+        /// <param name="e">A <see cref="NotifyFeatureCommandsCollectionFinishEventArgs"/> with the event data.</param>
+        protected virtual void OnNotifyFeatureCommandsCollectionFinish(NotifyFeatureCommandsCollectionFinishEventArgs e) => NotifyFeatureCommandsCollectionFinish?.Invoke(this, e);
+        #endregion
+
+        #region [protected] {virtual} (void) OnNotifyFeatureCommandsCollectionStart(NotifyFeatureCommandsCollectionStartEventArgs): Generates the NotifyFeatureCommandsCollectionStart event
+        /// <summary>
+        /// Generates the <see cref="NotifyFeatureCommandsCollectionStart"/> event.
+        /// </summary>
+        /// <param name="e">A <see cref="NotifyFeatureCommandsCollectionStartEventArgs"/> with the event data.</param>
+        protected virtual void OnNotifyFeatureCommandsCollectionStart(NotifyFeatureCommandsCollectionStartEventArgs e) => NotifyFeatureCommandsCollectionStart?.Invoke(this, e);
+        #endregion
+
         #endregion
 
         #region private methods
 
         private void NotifyFeatureCommandExecuted(object sender, NotifyFeatureCommandExecutedEventArgs e)
         {
-            _index++;
             OnNotifyFeatureCommandCollectionExecuted(new NotifyFeatureCommandCollectionExecutedEventArgs(_index, Count, e.Feature, e));
+        }
+
+        private void NotifyFeatureCommandExecuting(object sender, NotifyFeatureCommandExecutingEventArgs e)
+        {
+            _index++;
+            OnNotifyFeatureCommandCollectionExecuting(new NotifyFeatureCommandCollectionExecutingEventArgs(_index, Count, e.Feature, e));
         }
 
         #endregion

@@ -1,7 +1,7 @@
 ﻿
 namespace iTin.AspNet.Web.IIS.ComponentModel
 {
-    using iTin.Core.ComponentModel;
+    using iTin.Core.Min.ComponentModel;
 
     /// <summary>
     /// Defines a generic operations for a command

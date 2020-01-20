@@ -8,7 +8,7 @@ namespace iTin.AspNet.Web.IIS.Model
 
     using Newtonsoft.Json;
 
-    using iTin.Core.Helpers;
+    using iTin.Core.Min.Helpers;
 
     using ComponentModel.Enums;
 

@@ -9,52 +9,18 @@
 
   <ItemGroup>
     <Compile Remove="ComponentModel\Collection\GenericCommand.cs" />
-    <Compile Remove="Core\ComponentModel\Error.cs" />
-    <Compile Remove="Core\Extensions\ArrayExtensions.cs" />
-    <Compile Remove="Core\Extensions\BooleanExtensions.cs" />
-    <Compile Remove="Core\Extensions\ByteArrayExtensions.cs" />
-    <Compile Remove="Core\Extensions\DataTableExtensions.cs" />
-    <Compile Remove="Core\Extensions\DateTimeExtensions.cs" />
-    <Compile Remove="Core\Extensions\EnumerableExtensions.cs" />
-    <Compile Remove="Core\Extensions\GenericExtensions.cs" />
-    <Compile Remove="Core\Extensions\MathExtensions.cs" />
-    <Compile Remove="Core\Extensions\NullableExtensions.cs" />
-    <Compile Remove="Core\Extensions\NumberExtensions.cs" />
-    <Compile Remove="Core\Extensions\SecureStringExtensions.cs" />
-    <Compile Remove="Core\Extensions\StringBuilderExtensions.cs" />
-    <Compile Remove="Core\Extensions\StringListExtensions.cs" />
-    <Compile Remove="Core\Extensions\TimeSpanExtensions.cs" />
-    <Compile Remove="Core\Extensions\TypeExtensions.cs" />
-    <Compile Remove="Core\Extensions\XmlNodeExtensions.cs" />
-    <Compile Remove="Core\Helpers\CommonHelper.cs" />
-    <Compile Remove="Core\Helpers\CopierHelper.cs" />
-    <Compile Remove="Core\Helpers\CryptoHelper.cs" />
-    <Compile Remove="Core\Helpers\FileHelper.cs" />
-    <Compile Remove="Core\Helpers\LogicHelper.cs" />
-    <Compile Remove="Core\Helpers\RegularExpressionHelper.cs" />
-    <Compile Remove="Core\Helpers\SecurityHelper.cs" />
-    <Compile Remove="Core\Helpers\TimeAsyncHelper.cs" />
-    <Compile Remove="Core\Helpers\TimeHelper.cs" />
-    <Compile Remove="Core\Helpers\XmlHelper.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Models\Samples\IIS-Features.xml" />
+    <Content Include="Models\IIS\Schemas\Samples\IIS-Features.xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Models\Samples\IIS-Features.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Min\iTin.Core.Min.csproj" />
     <ProjectReference Include="..\..\..\iTin.Registry\iTin.Registry.Windows\iTin.Registry.Windows.csproj" />
   </ItemGroup>
 

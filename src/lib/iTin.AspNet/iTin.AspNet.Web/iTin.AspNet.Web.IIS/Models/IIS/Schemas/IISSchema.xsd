@@ -15,7 +15,7 @@
   <xs:complexType name="IISModel" id="IISModel">
     <xs:annotation xmlns="http://www.w3.org/2001/XMLSchema">
       <xs:documentation xml:lang="en">
-        Root element of a Syntec internet information services configuration (SIISC) configuration file that contains the features collection to install.
+        Root element of a iTin internet information services configuration file (IIISC) that contains the features collection to install.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

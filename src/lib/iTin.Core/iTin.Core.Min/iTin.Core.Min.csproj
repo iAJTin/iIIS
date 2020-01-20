@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ComponentModel\Error.cs" />
+    <Compile Remove="ComponentModel\Messages.cs" />
+    <Compile Remove="Extensions\ArrayExtensions.cs" />
+    <Compile Remove="Extensions\BooleanExtensions.cs" />
+    <Compile Remove="Extensions\ByteArrayExtensions.cs" />
+    <Compile Remove="Extensions\DataTableExtensions.cs" />
+    <Compile Remove="Extensions\DateTimeExtensions.cs" />
+    <Compile Remove="Extensions\EnumerableExtensions.cs" />
+    <Compile Remove="Extensions\GenericExtensions.cs" />
+    <Compile Remove="Extensions\MathExtensions.cs" />
+    <Compile Remove="Extensions\NullableExtensions.cs" />
+    <Compile Remove="Extensions\NumberExtensions.cs" />
+    <Compile Remove="Extensions\SecureStringExtensions.cs" />
+    <Compile Remove="Extensions\StringBuilderExtensions.cs" />
+    <Compile Remove="Extensions\StringListExtensions.cs" />
+    <Compile Remove="Extensions\TimeSpanExtensions.cs" />
+    <Compile Remove="Extensions\TypeExtensions.cs" />
+    <Compile Remove="Extensions\XmlNodeExtensions.cs" />
+    <Compile Remove="Helpers\CommonHelper.cs" />
+    <Compile Remove="Helpers\CopierHelper.cs" />
+    <Compile Remove="Helpers\CryptoHelper.cs" />
+    <Compile Remove="Helpers\FileHelper.cs" />
+    <Compile Remove="Helpers\LogicHelper.cs" />
+    <Compile Remove="Helpers\RegularExpressionHelper.cs" />
+    <Compile Remove="Helpers\SecurityHelper.cs" />
+    <Compile Remove="Helpers\TimeAsyncHelper.cs" />
+    <Compile Remove="Helpers\TimeHelper.cs" />
+    <Compile Remove="Helpers\TypeHelper.cs" />
+    <Compile Remove="Helpers\XmlHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
+
+</Project>

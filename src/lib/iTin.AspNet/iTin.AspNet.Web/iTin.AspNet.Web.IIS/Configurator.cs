@@ -140,14 +140,6 @@ namespace iTin.AspNet.Web.IIS
                     commands.Add(FeatureCommand.Create(feature));
                 }
 
-                //// IIS > Enable
-                //commands.Add(
-                //    GenericCommand.Create(
-                //        SystemHelper.Is32BitOperatingSystem
-                //            ? @"C:\WINDOWS\Microsoft.NET\Framework\4.0.30319\aspnet_regiis.exe"
-                //            : @"C:\WINDOWS\Microsoft.NET\Framework64\4.0.30319\aspnet_regiis.exe",
-                //        "-ir -enable"));
-
                 return commands;
             }
             catch

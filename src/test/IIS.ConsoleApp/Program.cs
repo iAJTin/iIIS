@@ -12,12 +12,16 @@ namespace IIS
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.Title = KnownConstants.AppName;
+            
+            // Configures IIS features from XML configuration file
+            IISSamples.ExecuteFromXmlFile();
 
             // Configures IIS features from custom features
             IISSamples.ExecuteFromCustomFeatures();
 
-            // Configures IIS features from XML configuration file
-            IISSamples.ExecuteFromXmlFile();
+            Console.WriteLine();
+            Console.WriteLine($"Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }

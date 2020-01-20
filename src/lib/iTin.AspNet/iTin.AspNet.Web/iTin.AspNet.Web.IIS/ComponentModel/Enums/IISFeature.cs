@@ -6,7 +6,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Enums
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    using iTin.Core.ComponentModel;
+    using iTin.Core.Min.ComponentModel;
 
     /// <summary>
     /// Defines a <b>Internet Information Services (IIS)</b> feature.
