@@ -1,10 +1,12 @@
 ﻿
 namespace iTin.AspNet.Web.IIS.ComponentModel
 {
+    using System;
+
     /// <summary>
     /// Defines a generic command.
     /// </summary>
-    public interface ICommand : IExecute
+    public interface ICommand : IEquatable<ICommand>, ICloneable, IExecute
     {
         /// <summary>
         /// Gets or sets command optional arguments.
@@ -29,5 +31,13 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
         /// A <see cref="string"/> that program responsible for executing the command.
         /// </value>
         string Program { get; set; }
+
+        /// <summary>
+        /// Gets or sets the command options
+        /// </summary>
+        /// <value>
+        /// A <see cref="CommandOptions"/> reference that contains command options.
+        /// </value>
+        CommandOptions Options { get; set; }
     }
 }

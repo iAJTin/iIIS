@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Models\IIS\Schemas\Samples\IIS-Features.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Models\IIS\Schemas\Samples\IIS-Features.xml" />
   </ItemGroup>
 
@@ -21,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Min\iTin.Core.Min.csproj" />
+    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Models\iTin.Core.Models.csproj" />
     <ProjectReference Include="..\..\..\iTin.Registry\iTin.Registry.Windows\iTin.Registry.Windows.csproj" />
   </ItemGroup>
 

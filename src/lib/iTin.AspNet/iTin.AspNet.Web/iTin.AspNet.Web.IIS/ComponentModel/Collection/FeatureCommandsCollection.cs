@@ -14,7 +14,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
     /// <summary>
     /// Class that defines a commands collection.
     /// </summary>
-    public class FeatureCommandsCollection : Collection<ICommand>
+    public sealed class FeatureCommandsCollection : Collection<ICommand>
     {
         #region private members
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -23,32 +23,46 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
 
         #region public events
 
-        #region [public] {event} (EventHandler<NotifyFeatureCommandCollectionExecuted>) NotifyFeatureCommandCollectionExecuted: Occurs when a command in the collection has been executed
+        #region [public] {event} (EventHandler<NotifyFeatureCommandCollectionExecuted>) NotifyFeatureCommandCollectionExecuted: Occurs when a ICommand in the collection has been executed
         /// <summary>
-        /// Occurs when a command in the collection has been executed.
+        /// Occurs when a <see cref="ICommand"/> in the collection has been executed.
         /// </summary>
         public event EventHandler<NotifyFeatureCommandCollectionExecutedEventArgs> NotifyFeatureCommandCollectionExecuted;
         #endregion
 
-        #region [public] {event} (EventHandler<NotifyFeatureCommandCollectionExecuting>) NotifyFeatureCommandCollectionExecuting: Occurs when the execution of a command associated with a feature starts
+        #region [public] {event} (EventHandler<NotifyFeatureCommandCollectionExecuting>) NotifyFeatureCommandCollectionExecuting: Occurs when the execution of a ICommand associated with a feature starts
         /// <summary>
-        /// Occurs when the execution of a command associated with a feature starts.
+        /// Occurs when the execution of a <see cref="ICommand"/> associated with a feature starts.
         /// </summary>
         public event EventHandler<NotifyFeatureCommandCollectionExecutingEventArgs> NotifyFeatureCommandCollectionExecuting;
         #endregion
 
-        #region [public] {event} (EventHandler<NotifyFeatureCommandsCollectionFinishEventArgs>) NotifyFeatureCommandsCollectionFinish: Occurs immediately after the execution of the last command in the collection
+        #region [public] {event} (EventHandler<NotifyFeatureCommandsCollectionFinishEventArgs>) NotifyFeatureCommandsCollectionFinish: Occurs immediately after the execution of the last ICommand in the collection
         /// <summary>
-        /// Occurs immediately after the execution of the last command in the collection.
+        /// Occurs immediately after the execution of the last <see cref="ICommand"/> in the collection.
         /// </summary>
         public event EventHandler<NotifyFeatureCommandsCollectionFinishEventArgs> NotifyFeatureCommandsCollectionFinish;
         #endregion
 
-        #region [public] {event} (EventHandler<NotifyFeatureCommandsCollectionStartEventArgs>) NotifyFeatureCommandsCollectionStart: Occurs immediately before the execution of the first command of the collection
+        #region [public] {event} (EventHandler<NotifyFeatureCommandsCollectionStartEventArgs>) NotifyFeatureCommandsCollectionStart: Occurs immediately before the execution of the first ICommand of the collection
         /// <summary>
-        /// Occurs immediately before the execution of the first command of the collection.
+        /// Occurs immediately before the execution of the first <see cref="ICommand"/> of the collection.
         /// </summary>
         public event EventHandler<NotifyFeatureCommandsCollectionStartEventArgs> NotifyFeatureCommandsCollectionStart;
+        #endregion
+
+        #endregion
+
+        #region public properties
+
+        #region [public] (bool) InternetInformationServerIsPresent(): Gets a value that indicates if Internet Information Services (IIS) is present in this system
+        /// <summary>
+        /// Gets a value that indicates if Internet Information Services (IIS) is present in this system.
+        /// </summary>
+        /// <value>
+        /// <b>true</b> if Internet Information Server (IIS) is present on your system; Otherwise <b>false</b>.
+        /// </value>
+        public bool InternetInformationServerIsPresent { get; internal set; }
         #endregion
 
         #endregion
@@ -63,7 +77,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
         {
             var resultTable = new Dictionary<ICommand, IResult>();
 
-            _index = 0;
+            _index = -1;
 
             OnNotifyFeatureCommandsCollectionStart(new NotifyFeatureCommandsCollectionStartEventArgs(this));
 
@@ -88,36 +102,36 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
 
         #region protected virtual methods
 
-        #region [protected] {virtual} (void) OnNotifyFeatureCommandCollectionExecuted(NotifyFeatureCommandCollectionExecutedEventArgs): Generates the NotifyFeatureCommandCollectionExecuted event
+        #region [protected] {virtual} (void) OnNotifyFeatureCommandCollectionExecuted(NotifyFeatureCommandCollectionExecutedEventArgs): Raises the NotifyFeatureCommandCollectionExecuted event
         /// <summary>
-        /// Generates the <see cref="NotifyFeatureCommandCollectionExecuted"/> event.
+        /// Raises the <see cref="NotifyFeatureCommandCollectionExecuted"/> event.
         /// </summary>
-        /// <param name="e">A <see cref="NotifyFeatureCommandCollectionExecutedEventArgs"/> with the event data.</param>
-        protected virtual void OnNotifyFeatureCommandCollectionExecuted(NotifyFeatureCommandCollectionExecutedEventArgs e) => NotifyFeatureCommandCollectionExecuted?.Invoke(this, e);
+        /// <param name="e">A <see cref="NotifyFeatureCommandCollectionExecutedEventArgs"/> that contains the event data.</param>
+        private void OnNotifyFeatureCommandCollectionExecuted(NotifyFeatureCommandCollectionExecutedEventArgs e) => NotifyFeatureCommandCollectionExecuted?.Invoke(this, e);
         #endregion
 
-        #region [protected] {virtual} (void) OnNotifyFeatureCommandCollectionExecuting(NotifyFeatureCommandCollectionExecutingEventArgs): Generates the NotifyFeatureCommandCollectionExecuting event
+        #region [protected] {virtual} (void) OnNotifyFeatureCommandCollectionExecuting(NotifyFeatureCommandCollectionExecutingEventArgs): Raises the NotifyFeatureCommandCollectionExecuting event
         /// <summary>
-        /// Generates the <see cref="NotifyFeatureCommandCollectionExecuting"/> event.
+        /// Raises the <see cref="NotifyFeatureCommandCollectionExecuting"/> event.
         /// </summary>
-        /// <param name="e">A <see cref="NotifyFeatureCommandCollectionExecutingEventArgs"/> with the event data.</param>
-        protected virtual void OnNotifyFeatureCommandCollectionExecuting(NotifyFeatureCommandCollectionExecutingEventArgs e) => NotifyFeatureCommandCollectionExecuting?.Invoke(this, e);
+        /// <param name="e">A <see cref="NotifyFeatureCommandCollectionExecutingEventArgs"/> that contains the event data.</param>
+        private void OnNotifyFeatureCommandCollectionExecuting(NotifyFeatureCommandCollectionExecutingEventArgs e) => NotifyFeatureCommandCollectionExecuting?.Invoke(this, e);
         #endregion
 
-        #region [protected] {virtual} (void) OnNotifyFeatureCommandsCollectionFinish(NotifyFeatureCommandsCollectionFinishEventArgs): Generates the NotifyFeatureCommandsCollectionFinish event
+        #region [protected] {virtual} (void) OnNotifyFeatureCommandsCollectionFinish(NotifyFeatureCommandsCollectionFinishEventArgs): Raises the NotifyFeatureCommandsCollectionFinish event
         /// <summary>
-        /// Generates the <see cref="NotifyFeatureCommandsCollectionFinish"/> event.
+        /// Raises the <see cref="NotifyFeatureCommandsCollectionFinish"/> event.
         /// </summary>
-        /// <param name="e">A <see cref="NotifyFeatureCommandsCollectionFinishEventArgs"/> with the event data.</param>
-        protected virtual void OnNotifyFeatureCommandsCollectionFinish(NotifyFeatureCommandsCollectionFinishEventArgs e) => NotifyFeatureCommandsCollectionFinish?.Invoke(this, e);
+        /// <param name="e">A <see cref="NotifyFeatureCommandsCollectionFinishEventArgs"/> that contains the event data.</param>
+        private void OnNotifyFeatureCommandsCollectionFinish(NotifyFeatureCommandsCollectionFinishEventArgs e) => NotifyFeatureCommandsCollectionFinish?.Invoke(this, e);
         #endregion
 
-        #region [protected] {virtual} (void) OnNotifyFeatureCommandsCollectionStart(NotifyFeatureCommandsCollectionStartEventArgs): Generates the NotifyFeatureCommandsCollectionStart event
+        #region [protected] {virtual} (void) OnNotifyFeatureCommandsCollectionStart(NotifyFeatureCommandsCollectionStartEventArgs): Raises the NotifyFeatureCommandsCollectionStart event
         /// <summary>
-        /// Generates the <see cref="NotifyFeatureCommandsCollectionStart"/> event.
+        /// Raises the <see cref="NotifyFeatureCommandsCollectionStart"/> event.
         /// </summary>
-        /// <param name="e">A <see cref="NotifyFeatureCommandsCollectionStartEventArgs"/> with the event data.</param>
-        protected virtual void OnNotifyFeatureCommandsCollectionStart(NotifyFeatureCommandsCollectionStartEventArgs e) => NotifyFeatureCommandsCollectionStart?.Invoke(this, e);
+        /// <param name="e">A <see cref="NotifyFeatureCommandsCollectionStartEventArgs"/> that contains the event data.</param>
+        private void OnNotifyFeatureCommandsCollectionStart(NotifyFeatureCommandsCollectionStartEventArgs e) => NotifyFeatureCommandsCollectionStart?.Invoke(this, e);
         #endregion
 
         #endregion

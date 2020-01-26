@@ -14,8 +14,8 @@ namespace iTin.AspNet.Web.IIS.Model
     /// <para>
     /// Belongs to: <b><c>IIS</c></b>. For more information, please see <see cref="IISModel"/>.
     /// </para>
-    /// <para>Represents <b>iTin Internet Information Services (SIIS)</b> root element of a configuration file.
-    /// <code lang="xml" title="SIIS Definition Usage">
+    /// <para>Represents <b>iTin Internet Information Services (IIIS)</b> root element of a configuration file.
+    /// <code lang="xml" title="IIIS Definition Usage">
     /// <![CDATA[
     /// <?xml version="1.0" encoding="utf-8">
     /// <IIS xmlns = "http://schemas.itin.com/utilities/iis/configurator/v1.0">

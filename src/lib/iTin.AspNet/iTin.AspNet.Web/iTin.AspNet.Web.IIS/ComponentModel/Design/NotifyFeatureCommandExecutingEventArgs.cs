@@ -3,7 +3,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
 {
     using System;
 
-    using ComponentModel.Enums;
+    using Enums;
 
     /// <summary>
     /// Provides data to the <see cref="FeatureCommand.NotifyFeatureCommandExecuting"/> event of an <see cref="FeatureCommand"/> object.
@@ -13,10 +13,10 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
         /// <summary>
         /// Initializes a new instance of the <see cref="NotifyFeatureCommandExecutedEventArgs"/> class.
         /// </summary>
-        /// <param name="feature">Feature to be processed</param>
-        public NotifyFeatureCommandExecutingEventArgs(IISFeature feature)
+        /// <param name="command">Feature to be processed</param>
+        public NotifyFeatureCommandExecutingEventArgs(ICommand command)
         {
-            Feature = feature;
+            Feature = ((FeatureCommand) command).Feature;
         }
 
         /// <summary>
@@ -25,6 +25,6 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
         /// <value>
         /// One of the values of the <see cref="IISFeature"/> enumeration that represents the feature to be processed.
         /// </value>
-        public IISFeature Feature { get; private set; }
+        public IISFeature Feature { get; }
     }
 }

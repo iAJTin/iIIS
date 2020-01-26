@@ -4,8 +4,6 @@ namespace IIS.FormsApp
     using System;
     using System.Windows.Forms;
 
-    using iTin.Core.Min.Models.Design.Enums;
-
     static class Program
     {
         /// <summary>
@@ -16,9 +14,7 @@ namespace IIS.FormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            var launcher = new Launcher { AutoClose = YesNo.No };
-            Application.Run(new IISFeaturesInstall(launcher));
+            Application.Run(new IISFeaturesInstall(Launcher.LoadFromSettings()));
         }
     }
 }

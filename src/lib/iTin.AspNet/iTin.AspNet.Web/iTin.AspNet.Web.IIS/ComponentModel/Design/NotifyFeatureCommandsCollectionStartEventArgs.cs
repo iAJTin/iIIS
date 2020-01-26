@@ -14,16 +14,15 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
         /// <param name="commands">Reference to commands collection</param>
         public NotifyFeatureCommandsCollectionStartEventArgs(FeatureCommandsCollection commands)
         {
-            Commands = commands;
+            InternetInformationServerIsPresent = commands == null ? false : commands.InternetInformationServerIsPresent;
         }
 
-
         /// <summary>
-        /// Gets the total commands into a collection.
+        /// Gets a value that indicates if Internet Information Services (IIS) is present in this system.
         /// </summary>
         /// <value>
-        /// A <see cref="FeatureCommandsCollection"/> reference that contains the commands collection.
+        /// <b>true</b> if Internet Information Server (IIS) is present on your system; Otherwise <b>false</b>.
         /// </value>
-        public FeatureCommandsCollection Commands { get; }
+        public bool InternetInformationServerIsPresent { get; }
     }
 }

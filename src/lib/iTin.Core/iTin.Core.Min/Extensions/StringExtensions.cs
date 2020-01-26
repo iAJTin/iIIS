@@ -28,14 +28,5 @@ namespace iTin.Core.Min
 
             return stream;
         }
-
-        /// <summary>
-        /// Determines whether this value has a value.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns>
-        /// <b>true</b> if specified value not is <b>null</b> or <b>Empty</b>; Otherwise, <b>false</b>.
-        /// </returns>
-        public static bool HasValue(this string value) => !string.IsNullOrEmpty(value);
     }
 }

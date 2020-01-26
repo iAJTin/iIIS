@@ -64,15 +64,16 @@ namespace iTin.AspNet.Web.IIS
 
         #region public static methods
 
-        #region [public] {static} (FeatureCommandsCollection) CreateCommands(IISFeature[]): Returns a new FeatureCommandsCollection reference from Internet Information Services (IIS) FeatureCommand array
+        #region [public] {static} (FeatureCommandsCollection) CreateCommands(IISFeature[], CommandOptions = null): Returns a new FeatureCommandsCollection reference from Internet Information Services (IIS) FeatureCommand array
         /// <summary>
         /// Returns a new <see cref="FeatureCommandsCollection"/> reference from <b>Internet Information Services (IIS)</b> <see cref="FeatureCommand"/> array.
         /// </summary>
         /// <param name="features">Features array</param>
+        /// <param name="commandOptions">Command options</param>
         /// <returns>
         /// A <see cref="FeatureCommandsCollection"/> reference.
         /// </returns>
-        public static FeatureCommandsCollection CreateCommands(IISFeature[] features)
+        public static FeatureCommandsCollection CreateCommands(IISFeature[] features, CommandOptions commandOptions = null)
         {
             if (features == null)
             {
@@ -85,19 +86,20 @@ namespace iTin.AspNet.Web.IIS
                 featureNames.Add(feature);
             }
 
-            return CreateCommandsImpl(featureNames);
+            return CreateCommandsImpl(featureNames, commandOptions ?? CommandOptions.SilentModeActivated);
         }
         #endregion
 
-        #region [public] {static} (FeatureCommandsCollection) CreateCommands(IISModel): Returns a new FeatureCommandsCollection reference from Internet Information Services (IIS) IISModel (XML model)
+        #region [public] {static} (FeatureCommandsCollection) CreateCommands(IISModel, CommandOptions = null): Returns a new FeatureCommandsCollection reference from Internet Information Services (IIS) IISModel (XML model)
         /// <summary>
         /// Returns a new <see cref="FeatureCommandsCollection"/> reference from <b>Internet Information Services (IIS)</b> <see cref="IISModel"/> (<b>XML</b> model).
         /// </summary>
         /// <param name="model">Features array</param>
+        /// <param name="commandOptions">Command options</param>
         /// <returns>
         /// A <see cref="FeatureCommandsCollection"/> reference.
         /// </returns>
-        public static FeatureCommandsCollection CreateCommands(IISModel model)
+        public static FeatureCommandsCollection CreateCommands(IISModel model, CommandOptions commandOptions = null)
         {
             if (model == null)
             {
@@ -110,7 +112,7 @@ namespace iTin.AspNet.Web.IIS
                 features.Add(feature.Name);
             }
 
-            return CreateCommandsImpl(features);
+            return CreateCommandsImpl(features, commandOptions ?? CommandOptions.SilentModeActivated);
         }
         #endregion
 
@@ -118,7 +120,7 @@ namespace iTin.AspNet.Web.IIS
 
         #region private static methods
 
-        private static FeatureCommandsCollection CreateCommandsImpl(IEnumerable<IISFeature> features)
+        private static FeatureCommandsCollection CreateCommandsImpl(IEnumerable<IISFeature> features, CommandOptions commandOptions)
         {
             var commands = new FeatureCommandsCollection();
 
@@ -127,17 +129,17 @@ namespace iTin.AspNet.Web.IIS
                 bool internetInformationServerIsPresent = RegistryOperations.CheckMachineKey(@"SOFTWARE\Microsoft\InetStp");
                 if (!internetInformationServerIsPresent)
                 {
-                    // IIS not installed > Begin installation
-                    commands.Add(FeatureCommand.Create("IIS-DefaultDocument", "All"));                                        
+                    // IIS not installed > :-( Begin installation
+                    commands.Add(FeatureCommand.Create("IIS-DefaultDocument", "All"));
                 }
 
-                // IIS installed > Begin enable all features
-                commands.Add(FeatureCommand.Create("IIS-WebServerRole"));
+                commands.InternetInformationServerIsPresent = internetInformationServerIsPresent;
 
-                // Features > Install
+                // IIS installed 
+                //  > Enable All Features > Install
                 foreach (IISFeature feature in features)
                 {
-                    commands.Add(FeatureCommand.Create(feature));
+                    commands.Add(FeatureCommand.Create(feature, options: commandOptions));
                 }
 
                 return commands;

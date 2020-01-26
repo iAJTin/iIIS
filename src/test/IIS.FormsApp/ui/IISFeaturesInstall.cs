@@ -2,14 +2,15 @@
 namespace IIS.FormsApp
 {
     using System;
+    using System.Diagnostics;
     using System.Text;
-    using System.Threading;
     using System.Windows.Forms;
 
     using iTin.AspNet.Web.IIS.ComponentModel;
     using iTin.AspNet.Web.IIS.ComponentModel.Design;
+
     using iTin.Core.Min.ComponentModel;
-    using iTin.Core.Min.Models.Design.Enums;
+    using iTin.Core.Models.Design.Enums;
     
     public partial class IISFeaturesInstall : Form
     {
@@ -22,16 +23,24 @@ namespace IIS.FormsApp
         }
 
 
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private FeatureCommandsCollection Commands => Launcher.Commands;
 
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private Launcher Launcher { get; }
 
+
+        private void CloseForm()
+        {
+            Close();
+        }
 
         private void InitializeControls()
         {
             Commands.NotifyFeatureCommandCollectionExecuting += NotifyFeatureCommandCollectionExecuting;
             Commands.NotifyFeatureCommandCollectionExecuted += NotifyFeatureCommandCollectionExecuted;
             Commands.NotifyFeatureCommandsCollectionFinish += NotifyFeatureCommandsCollectionFinish;
+            Commands.NotifyFeatureCommandsCollectionStart += NotifyFeatureCommandsCollectionStart;
 
             FeaturesProgressBar.Value = 0;
             FeaturesProgressBar.Maximum = Commands.Count;
@@ -42,7 +51,7 @@ namespace IIS.FormsApp
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
-            Close();
+            CloseForm();
         }
 
 
@@ -53,7 +62,9 @@ namespace IIS.FormsApp
 
         private void NotifyFeatureCommandCollectionExecuting(object sender, NotifyFeatureCommandCollectionExecutingEventArgs e)
         {
-            FeatureLabel.Text = $"Feature: {e.Feature} ({e.Index}/{e.Total})";
+            string featureDataText = $"{e.Feature} ({e.Index + 1}/{e.Total})";
+            FeatureLabel.Text = $@"Feature: {featureDataText}";
+            FeatureLabel.Refresh();
         }
 
         private void NotifyFeatureCommandsCollectionFinish(object sender, NotifyFeatureCommandsCollectionFinishEventArgs e)
@@ -63,10 +74,11 @@ namespace IIS.FormsApp
                 YesNo autoClose = Launcher.AutoClose;
                 if (autoClose == YesNo.Yes)
                 {
-                    Thread.Sleep(500);
-                    Close();
+                    CloseForm();
                 }
 
+                UserInformationFirstLineLabel.Visible = false;
+                UserInformationSecondLineLabel.Visible = false;
                 FinishButton.Visible = true;
             }
             else
@@ -77,13 +89,21 @@ namespace IIS.FormsApp
                     messages.AppendLine(error.Message);
                 }
 
-                MessageBox.Show(messages.ToString(), "Error", MessageBoxButtons.OK);
+                MessageBox.Show(messages.ToString(), @"Error", MessageBoxButtons.OK);
+
+                CloseForm();
             }
         }
 
+        private void NotifyFeatureCommandsCollectionStart(object sender, NotifyFeatureCommandsCollectionStartEventArgs e)
+        {
+        }
 
         private void StartTimer_Tick(object sender, EventArgs e)
         {
+            FeaturesProgressBar.Value = 0;
+            FeaturesProgressBar.Maximum = Commands.Count;
+
             StartTimer.Stop();
 
             Commands.Process();

@@ -8,11 +8,11 @@ namespace iTin.AspNet.Web.IIS.Model
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Root element of a <b>iTin Internet Information Services (IIISC)</b> configuration file that contains the custom definition of <b>Internet Information Services features</b>.
+    /// Root element of a <b>iTin Internet Information Services (IIIS)</b> configuration file that contains the custom definition of <b>Internet Information Services features</b>.
     /// </summary>
     /// <remarks>
-    /// <para>Represents <b>iTin Internet Information Services (IIISC)</b> root element of a configuration file.
-    /// <code lang="xml" title="IIISC Definition Usage">
+    /// <para>Represents <b>iTin Internet Information Services (IIIS)</b> root element of a configuration file.
+    /// <code lang="xml" title="IIIS Definition Usage">
     /// <![CDATA[
     /// <?xml version="1.0" encoding="utf-8">
     /// <IIS xmlns = "http://schemas.itin.com/utilities/iis/configurator/v1.0">

@@ -5,7 +5,7 @@ namespace iTin.Core.Min
     using System.ComponentModel;
     using System.Reflection;
 
-    using iTin.Core.Min.ComponentModel;
+    using ComponentModel;
 
     /// <summary>
     /// Static class than contains extension methods for items of type <see cref="Enum"/>.

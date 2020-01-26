@@ -6,7 +6,7 @@ namespace iTin.AspNet.Web.IIS.Model
     using System.ComponentModel;
     using System.Xml.Serialization;
 
-    using iTin.Core.Min.Models.Collections;
+    using iTin.Core.Models.Collections;
 
     [Serializable]
     [DebuggerStepThrough]

@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="ComponentModel\Error.cs" />
     <Compile Remove="ComponentModel\Messages.cs" />
     <Compile Remove="Extensions\ArrayExtensions.cs" />
@@ -17,6 +23,7 @@
     <Compile Remove="Extensions\DateTimeExtensions.cs" />
     <Compile Remove="Extensions\EnumerableExtensions.cs" />
     <Compile Remove="Extensions\GenericExtensions.cs" />
+    <Compile Remove="Extensions\ListExtensions.cs" />
     <Compile Remove="Extensions\MathExtensions.cs" />
     <Compile Remove="Extensions\NullableExtensions.cs" />
     <Compile Remove="Extensions\NumberExtensions.cs" />

@@ -7,7 +7,8 @@ namespace IIS.FormsApp
     using iTin.AspNet.Web.IIS.ComponentModel;
     using iTin.AspNet.Web.IIS.Model;
 
-    using iTin.Core.Min.Models.Design.Enums;
+    using iTin.Core.Min.Helpers;
+    using iTin.Core.Models.Design.Enums;
 
     public class Launcher
     {
@@ -20,6 +21,11 @@ namespace IIS.FormsApp
             Commands = Configurator.CreateCommands(model);
             AutoClose = YesNo.No;
         }
+
+        public static Launcher LoadFromSettings() => new Launcher
+        {
+            AutoClose = EnumHelper.CreateEnumTypeFromStringValue<YesNo>(AppSettings.AutoClose),
+        };
 
         public YesNo AutoClose { get; set; }
 

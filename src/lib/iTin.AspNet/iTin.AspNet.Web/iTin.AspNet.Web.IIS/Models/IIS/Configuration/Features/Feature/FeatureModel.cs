@@ -18,7 +18,7 @@ namespace iTin.AspNet.Web.IIS.Model
     /// <remarks>
     /// <para>Belongs to: <b><c>Features</c></b>. For more information, please see <see cref="FeaturesModelCollection"/>.</para>
     /// <para>
-    /// <code lang="xml" title="SIIS Definition Usage">
+    /// <code lang="xml" title="IIIS Definition Usage">
     /// <![CDATA[
     /// <?xml version="1.0" encoding="utf-8">
     /// <IIS xmlns = "http://schemas.itin.com/utilities/iis/configurator/v1.0">

@@ -26,5 +26,25 @@ namespace iTin.Core.Min.Helpers
 
             return Enum.GetValues(t).Cast<Enum>().FirstOrDefault(item => string.Equals(item.GetDescription(), descriptionEnum, StringComparison.InvariantCultureIgnoreCase));
         }
+
+        /// <summary>
+        /// Returns a <see cref="T:System.Enum" /> whose enum value matches the indicated value.
+        /// </summary>
+        /// <returns>
+        /// An enum value whose enum value matches the indicated value.
+        /// </returns>
+        public static T CreateEnumTypeFromStringValue<T>(string enumValue) where T : struct
+        {
+            Type t = typeof(T);
+
+            if (!t.IsEnum)
+            {
+                return default;
+            }
+
+            bool parsed = Enum.TryParse(enumValue, out T result);
+            return parsed ? result : default;
+        }
+
     }
 }

@@ -2,10 +2,11 @@
 namespace iTin.AspNet.Web.IIS.ComponentModel.Design
 {
     using System;
+    using System.Text;
 
     using iTin.Core.Min.ComponentModel;
 
-    using ComponentModel.Enums;
+    using Enums;
 
     /// <summary>
     /// Provides data to the <see cref="FeatureCommand.NotifyFeatureCommandExecuted"/> event of an <see cref="FeatureCommand"/> object.
@@ -15,14 +16,15 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
         /// <summary>
         /// Initializes a new instance of the <see cref="NotifyFeatureCommandExecutedEventArgs"/> class.
         /// </summary>
-        /// <param name="feature">Feature processed</param>
-        /// <param name="commandResult">Command execution result</param>
-        /// <param name="runResult">Program execution result</param>
-        public NotifyFeatureCommandExecutedEventArgs(IISFeature feature, IResult commandResult, string runResult)
+        /// <param name="command">Current command</param>
+        /// <param name="programResult">Program execution result</param>
+        /// <param name="operationResult">Command execution result</param>
+        public NotifyFeatureCommandExecutedEventArgs(ICommand command, StringBuilder programResult, IResult operationResult)
         {
-            Feature = feature;
-            RunResult = runResult;
-            Result = commandResult;
+            Command = command;
+            Result = operationResult;
+            Feature = ((FeatureCommand)command).Feature;
+            ProgramResult = programResult;
         }
 
         /// <summary>
@@ -31,7 +33,15 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
         /// <value>
         /// Operation result
         /// </value>
-        public IResult Result { get; private set; }
+        public ICommand Command { get; }
+
+        /// <summary>
+        /// Gets a value that contains the command execution result.
+        /// </summary>
+        /// <value>
+        /// Operation result
+        /// </value>
+        public IResult Result { get; }
 
         /// <summary>
         /// Gets a value that represents the processed feature.
@@ -39,14 +49,14 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
         /// <value>
         /// One of the values of the <see cref="IISFeature"/> enumeration that represents the processed feature.
         /// </value>
-        public IISFeature Feature { get; private set; }
+        public IISFeature Feature { get; }
 
         /// <summary>
         /// Gets a value that contains the result produced by the native program execution.
         /// </summary>
         /// <value>
-        /// A <see cref="string"/> containing the result produced by the native program execution.
+        /// A <see cref="StringBuilder"/> containing the result produced by the native program execution.
         /// </value>
-        public string RunResult { get; private set; }
+        public StringBuilder ProgramResult { get; }
     }
 }

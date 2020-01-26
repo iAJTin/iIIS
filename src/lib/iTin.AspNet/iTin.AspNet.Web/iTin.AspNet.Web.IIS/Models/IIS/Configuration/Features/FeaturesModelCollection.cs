@@ -15,7 +15,7 @@ namespace iTin.AspNet.Web.IIS.Model
     /// Belongs to: <b><c>Configuration</c></b>. For more information, please see <see cref="ConfigurationModel"/>.
     /// </para>
     /// <para>
-    /// <code lang="xml" title="SIIS Definition Usage">
+    /// <code lang="xml" title="IIIS Definition Usage">
     /// <![CDATA[
     /// <?xml version="1.0" encoding="utf-8">
     /// <IIS xmlns = "http://schemas.itin.com/utilities/iis/configurator/v1.0">

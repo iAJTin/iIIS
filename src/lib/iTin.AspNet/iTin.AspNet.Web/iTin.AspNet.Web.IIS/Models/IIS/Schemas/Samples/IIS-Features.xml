@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <IIS xmlns="http://schemas.itin.com/utilities/iis/configurator/v1.0">
-  <Configuration UseLog="Yes">
+  <Configuration>
     <Features>
+      <Feature Name="WebServerRole"/>
       <Feature Name="WebServer"/>
       <Feature Name="CommonHttpFeatures"/>
       <Feature Name="HttpErrors"/>
@@ -32,7 +33,6 @@
       <Feature Name="WMICompatibility"/>
       <Feature Name="LegacyScripts"/>
       <Feature Name="WindowsAuthentication"/>
-      <Feature Name="ASPNET45"/>
     </Features>
   </Configuration>
 </IIS>
