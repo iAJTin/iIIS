@@ -69,6 +69,13 @@
   <!-- Feature: Name: KnownFeature: Defines feature names -->
   <xs:simpleType id="KnownFeature" name="KnownFeature">
     <xs:restriction base="xs:string">
+      <xs:enumeration value="WebServerRole">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            WebServer
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="WebServer">
         <xs:annotation>
           <xs:documentation xml:lang="en">

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>iEEDID</id>
+    <id>iIIS</id>
     <version>1.0.0</version>
     <title>iIIS</title>
     <authors>iAJTin</authors>
@@ -10,23 +10,18 @@
     <projectUrl>https://github.com/iAJTin/iIIS</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/iAJTin/iIIS/master/nuget/iIIS.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>iIIS Internet Information Services</description>
-    <copyright>Copyright © 2019 iAJTin</copyright>
-    <tags>IIS Internet Windows Web iTin</tags>
-    <repository type="git" url="https://github.com/iAJTin/iEEDID" commit="6e94ccdba70d5e63032c97bd01e29f4fc3084baa" />
+    <description>iIIS is a lightweight implementation that allows you to install and add features to an Internet Information Services (IIS) installation using .NET code.</description>
+    <copyright>Copyright © 2020 iAJTin</copyright>
+    <tags>InternetInformationServices IIS Internet Windows Web iTin</tags>
     <dependencies>
-      <group targetFramework=".NETFramework4.0">
+      <group targetFramework="net461">
       </group>
       <group targetFramework=".NETStandard2.0">
-      </group>
-      <group targetFramework=".NETCoreApp2.0">
-      </group>
-      <group targetFramework=".NETCoreApp2.1">
       </group>
     </dependencies>
   </metadata>
   <files>
     <file src="..\README.txt" target="." />
-    <file src="..\src\lib\iTin.Core.Hardware\iTin.Core.Hardware.Specification\iTin.Core.Hardware.Specification.Eedid\bin\Release\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
+    <file src="..\src\lib\iTin.AspNet\iTin.AspNet.Web\iTin.AspNet.Web.IIS\bin\Release\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
   </files>
 </package>

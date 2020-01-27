@@ -1,10 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFrameworks>net461; netstandard20</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,10 +28,6 @@
     <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Min\iTin.Core.Min.csproj" />
     <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Models\iTin.Core.Models.csproj" />
     <ProjectReference Include="..\..\..\iTin.Registry\iTin.Registry.Windows\iTin.Registry.Windows.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Web" />
   </ItemGroup>
 
   <ItemGroup>

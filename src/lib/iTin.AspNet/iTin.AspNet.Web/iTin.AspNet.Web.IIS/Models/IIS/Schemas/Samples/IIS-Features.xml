@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<IIS xmlns="http://schemas.itin.com/utilities/iis/configurator/v1.0">
+<IIS xmlns="http://schemas.syntec.com/utilities/iis/configurator/v1.0">
   <Configuration>
     <Features>
       <Feature Name="WebServerRole"/>
