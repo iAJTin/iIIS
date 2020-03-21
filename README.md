@@ -34,13 +34,19 @@ iIIS is a lightweight implementation that allows you to install and add features
 
 ## Examples
 
-1. Configures **IIS** features from custom features (For more information, please see **IIS.ConsoleAPP** project)
+1. Configures **IIS** features from custom features synchronously (For more information, please see **IIS.ConsoleApp** project)
 
 
        FeatureCommandsCollection commands = Configurator.CreateCommands(Configurator.GetAllFeatures());
        commands.Process();
 
-2. Configures **IIS** features from XML configuration file (For more information, please see **IIS.ConsoleAPP** project)
+2. Configures **IIS** features from custom features synchronously (For more information, please see **IIS.ConsoleAsyncApp** project)
+
+
+       FeatureCommandsCollection commands = Configurator.CreateCommands(Configurator.GetAllFeatures());
+       await commands.ProcessAsync();
+
+3. Configures **IIS** features from XML configuration file (For more information, please see **IIS.ConsoleApp** project)
 
      **XML** content file used for this example 
 
@@ -83,11 +89,17 @@ iIIS is a lightweight implementation that allows you to install and add features
           </Configuration>
         </IIS>
 
-    .NET Code:
+    .NET synchronous Code:
 
        IISModel model = IISModel.LoadFromFile("~\\resources\\IIS-Features.xml");
        FeatureCommandsCollection commands = Configurator.CreateCommands(model);
        commands.Process();
+
+    .NET asynchronous Code:
+
+       IISModel model = IISModel.LoadFromFile("~\\resources\\IIS-Features.xml");
+       FeatureCommandsCollection commands = Configurator.CreateCommands(model);
+       async commands.ProcessAsync();
 
 # How can I send feedback!!!
 

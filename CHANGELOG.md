@@ -1,9 +1,39 @@
 ﻿# Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2020-03-21
+
+### Fixed
+
+- Fixes an xml schema-related problem that prevents the xml configuration file from being properly processed.
+
+### Added
+
+- Adds support for asynchronous processing calls, please see new projects added to the solution for more information
+
+- Adds two new projects to solution:
+
+      \root
+        - test
+            - IIS.ConsoleAsyncApp  [Console Test Async App]
+            - IIS.FormsAsyncApp    [Windows Forms Test Async App]
+
+### Changed
+
+- Library versions for this version
+  
+|Library|Version|Description|
+|:------|:------|:----------|
+|iTin.Core.Min| 1.0.0 | Common calls |
+|iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
+|iTin.Core.Models| 1.0.0 | XML and Json Models classes |
+|iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
+|iTin.AspNet.Web.IIS| **1.0.1** | Internet Information Services Library Calls |
+
 ## [1.0.0] - 2020-01-27
 
 ### Added
+
 - Create project and first commit
 
 - Solution structure
@@ -22,4 +52,15 @@ All notable changes to this project will be documented in this file.
             - IIS.ConsoleApp                    [Console Test App]
             - IIS.FormsApp                      [Windows Forms Test App]
 
+- Library versions for this version
+  
+|Library|Version|Description|
+|:------|:------|:----------|
+|iTin.Core.Min| 1.0.0 | Common calls |
+|iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
+|iTin.Core.Models| 1.0.0 | XML and Json Models classes |
+|iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
+|iTin.AspNet.Web.IIS| 1.0.0 | Internet Information Services Library Calls |
+
 [1.0.0]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.0
+[1.0.1]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.1
