@@ -40,7 +40,7 @@ iIIS is a lightweight implementation that allows you to install and add features
        FeatureCommandsCollection commands = Configurator.CreateCommands(Configurator.GetAllFeatures());
        commands.Process();
 
-2. Configures **IIS** features from custom features synchronously (For more information, please see **IIS.ConsoleAsyncApp** project)
+2. Configures **IIS** features from custom features asynchronously (For more information, please see **IIS.ConsoleAsyncApp** project)
 
 
        FeatureCommandsCollection commands = Configurator.CreateCommands(Configurator.GetAllFeatures());
