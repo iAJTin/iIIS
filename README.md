@@ -99,7 +99,7 @@ iIIS is a lightweight implementation that allows you to install and add features
 
        IISModel model = IISModel.LoadFromFile("~\\resources\\IIS-Features.xml");
        FeatureCommandsCollection commands = Configurator.CreateCommands(model);
-       async commands.ProcessAsync();
+       await commands.ProcessAsync();
 
 # How can I send feedback!!!
 
