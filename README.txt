@@ -32,13 +32,13 @@ Library versions for current iIIS version (1.0.1)
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
 |iTin.Core.Min            1.0.0         Common calls                                                 |
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core.IO             1.0.0		    IO Supports To Network Drives, Reletive Paths (~), Native IO |
+|iTin.Core.IO             1.0.0		      IO Supports To Network Drives, Reletive Paths (~), Native IO |
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core.Models         1.0.0	    	XML and Json Models classes                                  |
+|iTin.Core.Models         1.0.0	    	  XML and Json Models classes                                  |
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Registry.Windows    1.0.0		    Windows Registry Calls                                       |
+|iTin.Registry.Windows    1.0.0		      Windows Registry Calls                                       |
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.AspNet.Web.IIS      1.0.1		    Internet Information Services Library Calls                  |
+|iTin.AspNet.Web.IIS      1.0.1		      Internet Information Services Library Calls                  |
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
 
 Install via NuGet
