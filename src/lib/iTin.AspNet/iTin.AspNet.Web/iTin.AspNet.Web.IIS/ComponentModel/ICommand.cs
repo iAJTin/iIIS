@@ -6,7 +6,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
     /// <summary>
     /// Defines a generic command.
     /// </summary>
-    public interface ICommand : IEquatable<ICommand>, ICloneable, IExecute
+    public interface ICommand : IEquatable<ICommand>, ICloneable, IExecute, IAsyncExecute
     {
         /// <summary>
         /// Gets or sets command optional arguments.

@@ -4,6 +4,7 @@ namespace iTin.Core.Min.Helpers
     using System.Diagnostics;
     using System.Text;
     using System.Threading;
+    using System.Threading.Tasks;
 
     using iTin.Core.Min.ComponentModel;
     using iTin.Core.Min.ComponentModel.Enums;
@@ -111,5 +112,50 @@ namespace iTin.Core.Min.Helpers
         /// <param name="arguments">Program arguments</param>
         /// <param name="options">Run Program options</param>
         public static void RunProgram(WinProgram program, string arguments, RunProgramOptions options = null) => RunProgram(program.GetDescription(), arguments, options ?? RunProgramOptions.Default);
+
+
+
+        /// <summary>
+        /// Runs specified program with parameters.
+        /// </summary>
+        /// <param name="program">Program name</param>
+        /// <param name="arguments">Program arguments</param>
+        /// <returns>
+        /// A <see cref="string"/> with output command result.
+        /// </returns>
+        public static async Task<StringBuilder> RunCommandAsync(string program, string arguments)
+        {
+            var tcs = new TaskCompletionSource<int>();
+            StringBuilder builder = new StringBuilder();
+
+            ProcessStartInfo pi = new ProcessStartInfo(program, arguments)
+            {
+                CreateNoWindow = true,
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                WindowStyle = ProcessWindowStyle.Hidden
+            };
+
+            var process = new Process
+            {
+                StartInfo = pi,
+                EnableRaisingEvents = true
+            };
+
+            process.Exited += (sender, args) =>
+            {
+                tcs.SetResult(process.ExitCode);
+                process.Dispose();
+            };
+
+
+            process.Start();
+            while (!process.StandardOutput.EndOfStream)
+            {
+                builder.AppendLine(process.StandardOutput.ReadLine());
+            }
+
+            return await Task.FromResult(builder);
+        }
     }
 }

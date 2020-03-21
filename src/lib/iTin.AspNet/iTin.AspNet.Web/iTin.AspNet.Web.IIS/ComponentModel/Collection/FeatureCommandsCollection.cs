@@ -6,6 +6,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
     using System.Collections.ObjectModel;
     using System.Diagnostics;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using iTin.Core.Min.ComponentModel;
 
@@ -18,7 +19,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
     {
         #region private members
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private int _index = 0;
+        private int _index;
         #endregion
 
         #region public events
@@ -67,11 +68,44 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
 
         #endregion
 
+        #region public async methods
+
+        #region [public] {async} (Task) ProcessAsync(): Process all the commands in the collection asynchronously
+        /// <summary>
+        /// Process all the commands in the collection asynchronously.
+        /// </summary>
+        public async Task ProcessAsync()
+        {
+            var resultTable = new Dictionary<ICommand, IResult>();
+
+            _index = -1;
+
+            OnNotifyFeatureCommandsCollectionStart(new NotifyFeatureCommandsCollectionStartEventArgs(this));
+
+            foreach (ICommand command in this)
+            {
+                if (!(command is FeatureCommand featureCommand))
+                {
+                    continue;
+                }
+
+                featureCommand.NotifyFeatureCommandExecuted += NotifyFeatureCommandExecuted;
+                featureCommand.NotifyFeatureCommandExecuting += NotifyFeatureCommandExecuting;
+
+                resultTable.Add(featureCommand, await command.ExecuteAsync());
+            }
+
+            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success == true) ? ResultBase.SuccessResult : ResultBase.ErrorResult));
+        }
+        #endregion
+
+        #endregion
+
         #region public methods
 
-        #region [public] (void) Process(): Process all the commands in the collection
+        #region [public] (void) Process(): Process all the commands in the collection synchronously
         /// <summary>
-        /// Process all the commands in the collection.
+        /// Process all the commands in the collection synchronously.
         /// </summary>
         public void Process()
         {

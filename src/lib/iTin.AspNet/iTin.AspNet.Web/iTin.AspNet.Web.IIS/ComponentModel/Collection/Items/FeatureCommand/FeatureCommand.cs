@@ -3,6 +3,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
 {
     using System;
     using System.Text;
+    using System.Threading.Tasks;
 
     using iTin.Core.Min;
     using iTin.Core.Min.ComponentModel;
@@ -114,11 +115,39 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
 
         #endregion
 
+        #region public async methods
+
+        #region [public] {async} (Task<IResult>) ExecuteAsync(): Executes the command asynchronously
+        /// <summary>
+        /// Executes the command asynchronously.
+        /// </summary>
+        /// <returns>
+        /// Operation result
+        /// </returns>
+        public async Task<IResult> ExecuteAsync()
+        {
+            try
+            {
+                OnNotifyFeatureCommandExecuting(new NotifyFeatureCommandExecutingEventArgs(this));
+                StringBuilder programResult = await SystemHelper.RunCommandAsync("dism", Arguments == null ? Command : $"{Command} /{Arguments}");
+                OnNotifyFeatureCommandExecuted(new NotifyFeatureCommandExecutedEventArgs(this, programResult, ResultBase.SuccessResult));
+
+                return await Task.FromResult(ResultBase.SuccessResult);
+            }
+            catch (Exception ex)
+            {
+                return await Task.FromResult<IResult>(ResultBase.FromException(ex));
+            }
+        }
+        #endregion
+
+        #endregion
+
         #region public methods
 
-        #region [public] (IResult) Execute(): Executes the command
+        #region [public] (IResult) Execute(): Executes the command synchronously
         /// <summary>
-        /// Executes the command.
+        /// Executes the command synchronously.
         /// </summary>
         /// <returns>
         /// Operation result
