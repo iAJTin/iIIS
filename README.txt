@@ -52,17 +52,17 @@ Usage
 Examples
 --------
 
-1. Configures IIS features from custom features synchronously (For more information, please see IIS.ConsoleAPP project)
+1. Configures IIS features from custom features synchronously (For more information, please see IIS.ConsoleApp project)
 
     FeatureCommandsCollection commands = Configurator.CreateCommands(Configurator.GetAllFeatures());
     commands.Process();
 
-2. Configures IIS features from custom features asynchronously (For more information, please see IIS.ConsoleAsyncAPP project)
+2. Configures IIS features from custom features asynchronously (For more information, please see IIS.ConsoleAsyncApp project)
 
     FeatureCommandsCollection commands = Configurator.CreateCommands(Configurator.GetAllFeatures());
     await commands.ProcessAsync();
 
-3. Configures IIS features from XML configuration file (For more information, please see IIS.ConsoleAPP project)
+3. Configures IIS features from XML configuration file (For more information, please see IIS.ConsoleApp project)
 
     XML content file used for this example 
 
