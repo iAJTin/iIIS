@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.rawgit.com/iAJTin/iSMBIOS/master/nuget/iSMBIOS.png" height="32"/>
+  <img src="https://github.com/iAJTin/iIIS/blob/master/src/setup/resources/icon.png" height="32"/>
 </p>
 <p align="center">
   <a href="https://github.com/iAJTin/iIIS">
