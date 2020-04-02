@@ -116,4 +116,4 @@ If you have found **iIIS** useful at work or in a personal project, I would love
 
 My email address is fdo.garcia.vega@gmail.com
 
-[1.0.1]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.0
+[1.0.1]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.1
