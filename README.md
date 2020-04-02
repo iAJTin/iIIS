@@ -103,7 +103,7 @@ iIIS is a lightweight implementation that allows you to install and add features
 
 # Installer
 
-If you want to test the operation, you can use the installer that is provided in the following link.
+If you want to test the application, you can use the installer that is provided in the following link.
 
 |Description|Version|
 |:------|:------|
