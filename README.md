@@ -101,8 +101,19 @@ iIIS is a lightweight implementation that allows you to install and add features
        FeatureCommandsCollection commands = Configurator.CreateCommands(model);
        await commands.ProcessAsync();
 
+# Installer
+
+If you want to test the operation, you can use the installer that is provided in the following link.
+
+|Description|Version|
+|:------|:------|
+|iIISFeaturesSetup| [1.0.1] |
+
+
 # How can I send feedback!!!
 
 If you have found **iIIS** useful at work or in a personal project, I would love to hear about it. If you have decided not to use **iIIS**, please send me and email stating why this is so. I will use this feedback to improve **iIIS** in future releases.
 
 My email address is fdo.garcia.vega@gmail.com
+
+[1.0.1]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.0

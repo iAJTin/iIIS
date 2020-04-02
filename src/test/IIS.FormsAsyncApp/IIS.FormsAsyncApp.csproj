@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{053FC95C-01F8-45D2-A97A-9BE1A8724DF4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>IIS.FormsApp</RootNamespace>
-    <AssemblyName>IIS.FormsApp</AssemblyName>
+    <RootNamespace>IIS.FormsAsyncApp</RootNamespace>
+    <AssemblyName>IIS.FormsAsyncApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -70,6 +70,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ui\IISFeaturesInstall.resx">
       <DependentUpon>IISFeaturesInstall.cs</DependentUpon>

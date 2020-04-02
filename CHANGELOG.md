@@ -1,5 +1,24 @@
 ﻿# Changelog
+
 All notable changes to this project will be documented in this file.
+
+## [1.0.2] - 
+
+### Added
+
+- Adds windows installer project (iIISFeaturesSetup)
+
+- Adds two new projects to solution:
+
+      \ root 
+        \ src
+          \ deliverables
+            - vX.X.X            [Windows Installer], where: X.X.X => Version number
+          \ setup
+            - iIISFeaturesSetup [Console Test Async App]
+            - resources         [Shared installer resources]
+        \ util
+            - vs-extensions     [Microsoft Installer Visual Studio Extension (2017/2019)]
 
 ## [1.0.1] - 2020-03-21
 
@@ -13,7 +32,7 @@ All notable changes to this project will be documented in this file.
 
 - Adds two new projects to solution:
 
-      \root
+      \ root
         - test
             - IIS.ConsoleAsyncApp  [Console Test Async App]
             - IIS.FormsAsyncApp    [Windows Forms Test Async App]
@@ -38,7 +57,7 @@ All notable changes to this project will be documented in this file.
 
 - Solution structure
 
-      \root
+      \ root
         - lib
           - iTin.AspNet             
             - iTin.AspNet.Web.IIS               [Internet Information Services Library Calls] 
@@ -64,3 +83,4 @@ All notable changes to this project will be documented in this file.
 
 [1.0.0]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.0
 [1.0.1]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.1
+[1.0.2]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.2

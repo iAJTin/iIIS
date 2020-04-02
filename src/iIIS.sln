@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIS.ConsoleAsyncApp", "test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIS.FormsAsyncApp", "test\IIS.FormsAsyncApp\IIS.FormsAsyncApp.csproj", "{053FC95C-01F8-45D2-A97A-9BE1A8724DF4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "setup", "setup", "{5CF9DCF0-9CB0-40BD-A062-531E6DF5FF53}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "iIISFeaturesSetup", "setup\iIISFeaturesSetup\iIISFeaturesSetup.vdproj", "{E7B9D1BB-2D07-4C7C-94CA-7447F0FEE376}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,10 @@ Global
 		{053FC95C-01F8-45D2-A97A-9BE1A8724DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{053FC95C-01F8-45D2-A97A-9BE1A8724DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{053FC95C-01F8-45D2-A97A-9BE1A8724DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B9D1BB-2D07-4C7C-94CA-7447F0FEE376}.Debug|Any CPU.ActiveCfg = Debug
+		{E7B9D1BB-2D07-4C7C-94CA-7447F0FEE376}.Debug|Any CPU.Build.0 = Debug
+		{E7B9D1BB-2D07-4C7C-94CA-7447F0FEE376}.Release|Any CPU.ActiveCfg = Release
+		{E7B9D1BB-2D07-4C7C-94CA-7447F0FEE376}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{BFB8CA97-D5A3-4EBB-86AA-94CADA78A3A2} = {43139493-D514-44A0-A481-C2489F6F4BF7}
 		{ED144F46-5A08-4FF7-99C9-5E943F5714D1} = {E01CBC68-5F83-4D49-9983-D03B929CDB3A}
 		{053FC95C-01F8-45D2-A97A-9BE1A8724DF4} = {E01CBC68-5F83-4D49-9983-D03B929CDB3A}
+		{E7B9D1BB-2D07-4C7C-94CA-7447F0FEE376} = {5CF9DCF0-9CB0-40BD-A062-531E6DF5FF53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BEA577B4-2E9A-418F-AF76-DCD13DCA4ED1}
