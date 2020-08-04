@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.2] - 
+## [1.0.2] - 2020-08-04
+
+### Fixed
+
+- Fixes xml namespace in model sample.
 
 ### Added
 
