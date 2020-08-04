@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 
+
+### Fixed
+
+-
+
+### Added
+
+-
+
+### Changed
+
+- Library versions for this version
+  
+|Library|Version|Description|
+|:------|:------|:----------|
+|iTin.Core.Min| 1.0.0 | Common calls |
+|iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
+|iTin.Core.Models| 1.0.0 | XML and Json Models classes |
+|iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
+|iTin.AspNet.Web.IIS| **1.0.3** | Internet Information Services Library Calls |
+
 ## [1.0.2] - 2020-08-04
 
 ### Fixed
@@ -101,3 +123,4 @@ All notable changes to this project will be documented in this file.
 [1.0.0]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.0
 [1.0.1]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.1
 [1.0.2]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.2
+[1.0.3]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.3
