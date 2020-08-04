@@ -24,6 +24,6 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
         /// <value>
         /// Operation result
         /// </value>
-        public IResult Result { get; private set; }
+        public IResult Result { get; }
     }
 }

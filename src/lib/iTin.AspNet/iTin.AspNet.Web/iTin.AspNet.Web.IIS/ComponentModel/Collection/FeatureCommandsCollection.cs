@@ -95,7 +95,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
                 resultTable.Add(featureCommand, await command.ExecuteAsync());
             }
 
-            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success == true) ? ResultBase.SuccessResult : ResultBase.ErrorResult));
+            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? ResultBase.SuccessResult : ResultBase.ErrorResult));
         }
         #endregion
 
@@ -128,7 +128,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
                 resultTable.Add(featureCommand, command.Execute());
             }
 
-            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success == true) ? ResultBase.SuccessResult : ResultBase.ErrorResult));
+            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? ResultBase.SuccessResult : ResultBase.ErrorResult));
         }
         #endregion
 

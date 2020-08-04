@@ -14,7 +14,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
         /// <param name="commands">Reference to commands collection</param>
         public NotifyFeatureCommandsCollectionStartEventArgs(FeatureCommandsCollection commands)
         {
-            InternetInformationServerIsPresent = commands == null ? false : commands.InternetInformationServerIsPresent;
+            InternetInformationServerIsPresent = commands?.InternetInformationServerIsPresent ?? false;
         }
 
         /// <summary>
