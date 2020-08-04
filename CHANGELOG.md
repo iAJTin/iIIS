@@ -14,15 +14,28 @@ All notable changes to this project will be documented in this file.
 
 - Adds two new projects to solution:
 
-      \ root 
-        \ src
-          \ deliverables
-            - vX.X.X            [Windows Installer], where: X.X.X => Version number
-          \ setup
-            - iIISFeaturesSetup [Console Test Async App]
-            - resources         [Shared installer resources]
-        \ util
-            - vs-extensions     [Microsoft Installer Visual Studio Extension (2017/2019)]
+      \- root 
+        \- src
+           \- deliverables
+              · vX.X.X            [Windows Installer], where: X.X.X => Version number (current = 1.0.2)
+           \- setup
+              · iIISFeaturesSetup [Console Test Async App]
+              · resources         [Shared installer resources]
+        \- util
+           · vs-extensions        [Microsoft Installer Visual Studio Extension (2017/2019)]
+
+### Changed
+
+- Library versions for this version
+  
+|Library|Version|Description|
+|:------|:------|:----------|
+|iTin.Core.Min| 1.0.0 | Common calls |
+|iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
+|iTin.Core.Models| 1.0.0 | XML and Json Models classes |
+|iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
+|iTin.AspNet.Web.IIS| **1.0.2** | Internet Information Services Library Calls |
+
 
 ## [1.0.1] - 2020-03-21
 

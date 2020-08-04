@@ -1,5 +1,5 @@
 
-What is iSMBIOS?
+What is iIIS ?
 ================
 
 iIIS is a lightweight implementation that allows you to install and add features to an Internet Information Services (IIS) installation using .NET code.
@@ -13,19 +13,24 @@ Changes in this version
 
 · Added
   -----
- - Adds support for asynchronous processing calls, please see new projects added to the solution for more information
+  - Adds support for asynchronous processing calls, please see new projects added to the solution for more information
 
- - Adds two new projects to solution:
+  - Adds two new projects to solution:
  
-   \root
-     - test
-       - IIS.ConsoleAsyncApp  [Console Test Async App]
-       - IIS.FormsAsyncApp    [Windows Forms Test Async App]
+    \ root
+      \ src
+        \ deliverables
+          · vX.X.X            [Windows Installer], where: X.X.X => Version number
+        \ setup
+          · iIISFeaturesSetup [Console Test Async App]
+          · resources         [Shared installer resources]
+        \ util
+          · vs-extensions     [Microsoft Installer Visual Studio Extension (2017/2019)]
 
 Library versions
 ================
 
-Library versions for current iIIS version (1.0.1)
+Library versions for current iIIS version (1.0.2)
 
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
 | Library                 Version       Description                                                  |
@@ -38,7 +43,7 @@ Library versions for current iIIS version (1.0.1)
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
 | iTin.Registry.Windows    1.0.0        Windows Registry Calls                                       |
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
-| iTin.AspNet.Web.IIS      1.0.1        Internet Information Services Library Calls                  |
+| iTin.AspNet.Web.IIS      1.0.2        Internet Information Services Library Calls                  |
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
 
 Install via NuGet

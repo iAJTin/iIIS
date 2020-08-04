@@ -107,7 +107,7 @@ If you want to test the application, you can use the installer that is provided 
 
 |Description|Version|
 |:------|:------|
-|iIISFeaturesSetup| [1.0.1] |
+|iIISFeaturesSetup| [1.0.2] |
 
 
 # How can I send feedback!!!
@@ -116,4 +116,4 @@ If you have found **iIIS** useful at work or in a personal project, I would love
 
 My email address is fdo.garcia.vega@gmail.com
 
-[1.0.1]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.1
+[1.0.2]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.2
