@@ -20,7 +20,7 @@ Changes in this version
     \ root
       \ src
         \ deliverables
-          · vX.X.X            [Windows Installer], where: X.X.X => Version number
+          · vX.X.X            [Windows Installer], where: X.X.X => Version number (current v1.0.2)
         \ setup
           · iIISFeaturesSetup [Console Test Async App]
           · resources         [Shared installer resources]
