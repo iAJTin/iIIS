@@ -114,6 +114,10 @@ If you want to test the application, you can use the installer that is provided 
 
 If you have found **iIIS** useful at work or in a personal project, I would love to hear about it. If you have decided not to use **iIIS**, please send me and email stating why this is so. I will use this feedback to improve **iIIS** in future releases.
 
-My email address is fdo.garcia.vega@gmail.com
+My email address is 
+
+![email.png][email] 
 
 [1.0.2]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.2
+
+[email]: ./assets/email.png "email"
