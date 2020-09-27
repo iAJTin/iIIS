@@ -14,6 +14,8 @@ iIIS is a lightweight implementation that allows you to install and add features
 
 # Install via NuGet
 
+- From nuget gallery
+
 <table>
   <tr>
     <td>
@@ -29,6 +31,10 @@ iIIS is a lightweight implementation that allows you to install and add features
     </td>  
   </tr>
 </table>
+
+- From package manager console
+
+```PM> Install-Package iIIS```
 
 # Usage
 
