@@ -8,6 +8,7 @@
     <owners>iAJTin</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/iAJTin/iIIS</projectUrl>
+    <icon>.\iIIS.png</icon>
     <iconUrl>https://raw.githubusercontent.com/iAJTin/iIIS/master/nuget/iIIS.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>iIIS is a lightweight implementation that allows you to install and add features to an Internet Information Services (IIS) installation using .NET code.</description>
@@ -22,6 +23,7 @@
   </metadata>
   <files>
     <file src="..\README.txt" target="." />
+    <file src=".\iIIS.png" target="." />
     <file src="..\src\lib\iTin.AspNet\iTin.AspNet.Web\iTin.AspNet.Web.IIS\bin\Release\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
   </files>
 </package>
