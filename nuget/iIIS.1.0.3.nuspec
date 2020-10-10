@@ -14,6 +14,7 @@
     <description>iIIS is a lightweight implementation that allows you to install and add features to an Internet Information Services (IIS) installation using .NET code.</description>
     <copyright>Copyright © 2020 iAJTin</copyright>
     <tags>InternetInformationServices IIS Internet Windows Web iTin</tags>
+    <repository type="git" url="https://github.com/iAJTin/iIIS" commit="6bd6922fed6f8671a3cf0286ade2c4b3e49b34e2" />
     <dependencies>
       <group targetFramework="net461">
       </group>
