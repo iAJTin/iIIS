@@ -7,6 +7,45 @@ iIIS is a lightweight implementation that allows you to install and add features
 Changes in this version
 =======================
 
+· Added
+  -----
+  - Add new libraries and remove old libraries for compability with another libraries.
+  - New delivery published v1.0.3
+
+· Removed
+  -------
+    - Library removed for this version
+
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | Library                 Version       Description                                                            |
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Core.Min            1.0.0        Common calls                                                           |
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+
+· Changed
+  -------
+  - Uses new IResult implementations in iTin.Core (only for internal use), no affect to existent apps.
+  - Library versions for this version
+
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | Library                 Version       Description                                                            |
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Core               2.0.0.0        Base library containing various extensions, helpers, common constants |
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Core.IO            1.0.0.0        IO Supports To Network Drives, Reletive Paths (~), Native IO          |
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Core.Models        1.0.0.0        XML and Json Models classes                                           |
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Registry.Windows   1.0.0.0        Windows Registry Calls                                                |
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.AspNet.Web.IIS     1.0.0.3        Internet Information Services Library Calls                           |
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Logging            1.0.0.0        Internet Information Services Library Calls                           |
+    •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+
+v1.0.2
+=======================
+
 · Fixed
   -----
  - Fixes an xml schema-related problem that prevents the xml configuration file from being properly processed.
