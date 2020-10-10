@@ -3,7 +3,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
 {
     using System;
 
-    using iTin.Core.Min.ComponentModel;
+    using iTin.Core.ComponentModel;
 
     /// <summary>
     /// Provides data to the <see cref="FeatureCommandsCollection.NotifyFeatureCommandsCollectionFinish"/> event of an <see cref="FeatureCommandsCollection"/> object.

@@ -8,7 +8,8 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
     using System.Linq;
     using System.Threading.Tasks;
 
-    using iTin.Core.Min.ComponentModel;
+    using iTin.Core.ComponentModel;
+    using iTin.Core.ComponentModel.Results;
 
     using Design;
 
@@ -95,7 +96,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
                 resultTable.Add(featureCommand, await command.ExecuteAsync());
             }
 
-            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? ResultBase.SuccessResult : ResultBase.ErrorResult));
+            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? BooleanResult.SuccessResult : BooleanResult.CreateErroResult("")));
         }
         #endregion
 
@@ -128,7 +129,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
                 resultTable.Add(featureCommand, command.Execute());
             }
 
-            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? ResultBase.SuccessResult : ResultBase.ErrorResult));
+            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? BooleanResult.SuccessResult : BooleanResult.CreateErroResult("")));
         }
         #endregion
 

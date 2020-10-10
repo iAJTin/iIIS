@@ -1,4 +1,6 @@
 ﻿
+using iTin.Core.ComponentModel.Results;
+
 namespace iTin.Core.Models
 {
     using System;
@@ -12,9 +14,9 @@ namespace iTin.Core.Models
     using System.Xml.Serialization;
 
     using iTin.Core.IO;
-    using iTin.Core.Min;
-    using iTin.Core.Min.ComponentModel;
-    using iTin.Core.Min.Helpers;
+    using iTin.Core;
+    using iTin.Core.ComponentModel;
+    using iTin.Core.Helpers;
 
     using Newtonsoft.Json;
 
@@ -253,18 +255,15 @@ namespace iTin.Core.Models
                 var candidateFullPath = Path.PathResolver(fileName);
                 var filenameWithoutExtension = NativeIO.Path.GetFileNameWithoutExtension(candidateFullPath);
                 var directoryName = NativeIO.Path.GetDirectoryName(candidateFullPath);
-                var safeFullFilenamePath = $"{directoryName}{Path.DirectorySeparatorChar}{filenameWithoutExtension}.{(format == KnownFileFormat.Xml ? KnownFileFormat.Xml.ToString().ToLowerInvariant() : KnownFileFormat.Json.ToString().ToLowerInvariant())}";
+                var safeFullFilenamePath = $"{directoryName}{NativeIO.Path.DirectorySeparatorChar}{filenameWithoutExtension}.{(format == KnownFileFormat.Xml ? KnownFileFormat.Xml.ToString().ToLowerInvariant() : KnownFileFormat.Json.ToString().ToLowerInvariant())}";
 
                 var rawModel = Serialize(safeOptions, format);
 
-                return
-                    rawModel
-                        .AsStream(safeOptions.Encoding)
-                        .SaveToFile(safeFullFilenamePath, safeOptions.ToSaveOptions());
+                return rawModel.AsStream(safeOptions.Encoding).SaveToFile(safeFullFilenamePath, safeOptions.ToSaveOptions());
             }
             catch (Exception ex)
             {
-                return ResultBase.FromException(ex);
+                return BooleanResult.FromException(ex);
             }
         }
         #endregion

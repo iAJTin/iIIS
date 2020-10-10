@@ -3,9 +3,10 @@ namespace iTin.Core.IO
 {
     using System;
 
-    using iTin.Core.Min;
-    using iTin.Core.Min.ComponentModel;
-    using iTin.Core.Min.Helpers;
+    using iTin.Core;
+    using iTin.Core.ComponentModel;
+    using iTin.Core.ComponentModel.Results;
+    using iTin.Core.Helpers;
 
     using NativeIO = System.IO;
 
@@ -42,7 +43,7 @@ namespace iTin.Core.IO
             }
             catch (Exception ex)
             {
-                return ResultBase.FromException(ex);
+                return BooleanResult.FromException(ex);
             }
         }
 
@@ -74,11 +75,11 @@ namespace iTin.Core.IO
                     stream.WriteTo(fs);
                 }
 
-                return ResultBase.SuccessResult;
+                return BooleanResult.SuccessResult;
             }
             catch(Exception ex)
             {
-                return ResultBase.FromException(ex);
+                return BooleanResult.FromException(ex);
             }
         }
     }

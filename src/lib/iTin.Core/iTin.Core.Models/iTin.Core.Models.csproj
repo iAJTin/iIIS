@@ -5,7 +5,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>1.0.0</Version>
+    <Version>1.0.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\iTin.Core.IO\iTin.Core.IO.csproj" />
-    <ProjectReference Include="..\iTin.Core.Min\iTin.Core.Min.csproj" />
+    <ProjectReference Include="..\iTin.Core\iTin.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

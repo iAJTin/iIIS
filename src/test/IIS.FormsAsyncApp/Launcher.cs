@@ -7,7 +7,7 @@ namespace IIS.FormsApp
     using iTin.AspNet.Web.IIS.ComponentModel;
     using iTin.AspNet.Web.IIS.Model;
 
-    using iTin.Core.Min.Helpers;
+    using iTin.Core.Helpers;
     using iTin.Core.Models.Design.Enums;
 
     public class Launcher

@@ -5,7 +5,7 @@ namespace iTin.AspNet.Web.IIS.Model
 
     using Newtonsoft.Json;
 
-    using iTin.Core.Min.Helpers;
+    using iTin.Core.Helpers;
 
     /// <summary>
     /// Collection of Internet Information Services Feature. Each element defines a feature.

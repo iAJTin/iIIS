@@ -3,13 +3,12 @@ namespace IIS.FormsApp
 {
     using System;
     using System.Diagnostics;
-    using System.Text;
     using System.Windows.Forms;
 
     using iTin.AspNet.Web.IIS.ComponentModel;
     using iTin.AspNet.Web.IIS.ComponentModel.Design;
 
-    using iTin.Core.Min.ComponentModel;
+    using iTin.Core.ComponentModel;
     using iTin.Core.Models.Design.Enums;
     
     public partial class IISFeaturesInstall : Form
@@ -83,13 +82,7 @@ namespace IIS.FormsApp
             }
             else
             {
-                var messages = new StringBuilder();
-                foreach (IResultErrorData error in e.Result.Errors)
-                {
-                    messages.AppendLine(error.Message);
-                }
-
-                MessageBox.Show(messages.ToString(), @"Error", MessageBoxButtons.OK);
+                MessageBox.Show(e.Result.Errors.AsMessages().ToStringBuilder().ToString(), @"Error", MessageBoxButtons.OK);
 
                 CloseForm();
             }

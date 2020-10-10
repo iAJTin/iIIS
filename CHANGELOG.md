@@ -2,27 +2,35 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.3] - 
-
-### Fixed
-
--
+## [1.0.3] - 2020-10-10
 
 ### Added
 
--
+- Add new libraries and remove old libraries for compability with another libraries.
+- New delivery published [Delivery 1.0.3].
+
+### Removed
+
+- Library removed for this version
+
+|Library|Version|Description|
+|:------|:------|:----------|
+|iTin.Core.Min| 1.0.0 | Common calls |
 
 ### Changed
+
+- Uses new **IResult** implementations in **iTin.Core** (only for internal use), no affect to existent apps.
 
 - Library versions for this version
   
 |Library|Version|Description|
 |:------|:------|:----------|
-|iTin.Core.Min| 1.0.0 | Common calls |
-|iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
-|iTin.Core.Models| 1.0.0 | XML and Json Models classes |
-|iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
-|iTin.AspNet.Web.IIS| **1.0.3** | Internet Information Services Library Calls |
+|iTin.Core| 2.0.0.0 | Base library containing various extensions, helpers, common constants |
+|iTin.Core.IO| 1.0.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
+|iTin.Core.Models| 1.0.0.0 | XML and Json Models classes |
+|iTin.Registry.Windows| 1.0.0.0 | Windows Registry Calls  |
+|iTin.AspNet.Web.IIS| **1.0.0.3** | Internet Information Services Library Calls |
+|iTin.Logging| 1.0.0.0 | Logging library |
 
 ## [1.0.2] - 2020-08-04
 
@@ -120,7 +128,9 @@ All notable changes to this project will be documented in this file.
 |iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
 |iTin.AspNet.Web.IIS| 1.0.0 | Internet Information Services Library Calls |
 
-[1.0.0]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.0
-[1.0.1]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.1
-[1.0.2]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.2
 [1.0.3]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.3
+[1.0.2]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.2
+[1.0.1]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.1
+[1.0.0]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.0
+
+[Delivery 1.0.3]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.3

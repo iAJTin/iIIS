@@ -21,7 +21,7 @@ namespace IIS
             await IISSamples.ExecuteFromCustomFeaturesAsync();
 
             Console.WriteLine();
-            Console.WriteLine($"Press any key to exit...");
+            Console.WriteLine($@"Press any key to exit...");
             Console.ReadKey();
         }
     }

@@ -5,9 +5,10 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
     using System.Text;
     using System.Threading.Tasks;
 
-    using iTin.Core.Min;
-    using iTin.Core.Min.ComponentModel;
-    using iTin.Core.Min.Helpers;
+    using iTin.Core;
+    using iTin.Core.ComponentModel;
+    using iTin.Core.ComponentModel.Results;
+    using iTin.Core.Helpers;
 
     using Design;
     using Enums;
@@ -130,13 +131,13 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
             {
                 OnNotifyFeatureCommandExecuting(new NotifyFeatureCommandExecutingEventArgs(this));
                 StringBuilder programResult = await SystemHelper.RunCommandAsync("dism", Arguments == null ? Command : $"{Command} /{Arguments}");
-                OnNotifyFeatureCommandExecuted(new NotifyFeatureCommandExecutedEventArgs(this, programResult, ResultBase.SuccessResult));
+                OnNotifyFeatureCommandExecuted(new NotifyFeatureCommandExecutedEventArgs(this, programResult, BooleanResult.SuccessResult));
 
-                return await Task.FromResult(ResultBase.SuccessResult);
+                return await Task.FromResult(BooleanResult.SuccessResult);
             }
             catch (Exception ex)
             {
-                return await Task.FromResult<IResult>(ResultBase.FromException(ex));
+                return await Task.FromResult<IResult>(BooleanResult.FromException(ex));
             }
         }
         #endregion
@@ -158,13 +159,13 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
             {
                 OnNotifyFeatureCommandExecuting(new NotifyFeatureCommandExecutingEventArgs(this));
                 StringBuilder programResult = SystemHelper.RunCommand("dism", Arguments == null ? Command : $"{Command} /{Arguments}");
-                OnNotifyFeatureCommandExecuted(new NotifyFeatureCommandExecutedEventArgs(this, programResult, ResultBase.SuccessResult));
+                OnNotifyFeatureCommandExecuted(new NotifyFeatureCommandExecutedEventArgs(this, programResult, BooleanResult.SuccessResult));
 
-                return ResultBase.SuccessResult;
+                return BooleanResult.SuccessResult;
             }
             catch(Exception ex)
             {
-                return ResultBase.FromException(ex);
+                return BooleanResult.FromException(ex);
             }
         }
         #endregion

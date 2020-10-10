@@ -5,16 +5,12 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>1.0.2</Version>
+    <Version>1.0.0.3</Version>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ComponentModel\Collection\GenericCommand.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+    <None Include="icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Min\iTin.Core.Min.csproj" />
+    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.IO\iTin.Core.IO.csproj" />
     <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Models\iTin.Core.Models.csproj" />
     <ProjectReference Include="..\..\..\iTin.Registry\iTin.Registry.Windows\iTin.Registry.Windows.csproj" />
   </ItemGroup>

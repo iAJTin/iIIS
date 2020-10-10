@@ -98,13 +98,13 @@
       <Project>{66108e17-bdf9-41f3-be43-1b4386d003cc}</Project>
       <Name>iTin.AspNet.Web.IIS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\lib\iTin.Core\iTin.Core.Min\iTin.Core.Min.csproj">
-      <Project>{6c3d3c7c-29fe-4bfe-a0b3-d4ac1073ac84}</Project>
-      <Name>iTin.Core.Min</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\lib\iTin.Core\iTin.Core.Models\iTin.Core.Models.csproj">
       <Project>{bfb8ca97-d5a3-4ebb-86aa-94cada78a3a2}</Project>
       <Name>iTin.Core.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\iTin.Core\iTin.Core\iTin.Core.csproj">
+      <Project>{b43d3f4d-89e7-453c-aad5-af727cd4ee40}</Project>
+      <Name>iTin.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

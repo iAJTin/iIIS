@@ -3,7 +3,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
 {
     using System.Threading.Tasks;
 
-    using iTin.Core.Min.ComponentModel;
+    using iTin.Core.ComponentModel;
 
     /// <summary>
     /// Defines a generic operations for a command

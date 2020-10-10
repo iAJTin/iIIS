@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>iIIS</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>iIIS</title>
     <authors>iAJTin</authors>
     <owners>iAJTin</owners>
@@ -24,6 +24,6 @@
   <files>
     <file src="..\README.txt" target="." />
     <file src=".\iIIS.png" target="." />
-    <file src="..\src\lib\iTin.AspNet\iTin.AspNet.Web\iTin.AspNet.Web.IIS\bin\Release\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
+    <file src="..\src\lib\iTin.AspNet\iTin.AspNet.Web\iTin.AspNet.Web.IIS\bin\Debug\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
   </files>
 </package>

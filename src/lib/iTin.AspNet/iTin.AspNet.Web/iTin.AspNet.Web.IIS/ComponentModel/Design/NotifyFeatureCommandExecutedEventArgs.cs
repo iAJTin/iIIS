@@ -4,7 +4,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel.Design
     using System;
     using System.Text;
 
-    using iTin.Core.Min.ComponentModel;
+    using iTin.Core.ComponentModel;
 
     using Enums;
 
