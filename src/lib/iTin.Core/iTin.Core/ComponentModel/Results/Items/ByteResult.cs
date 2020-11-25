@@ -1,6 +1,7 @@
 ﻿
 namespace iTin.Core.ComponentModel.Results
 {
+    using System;
     using System.Collections.Generic;
 
     /// <summary>
@@ -19,6 +20,17 @@ namespace iTin.Core.ComponentModel.Results
         public new static ByteResult CreateErroResult(string message, string code = "") => CreateErroResult(new IResultError[] { new ResultError { Code = code, Message = message } });
 
         /// <summary>
+        /// Returns a new <see cref="ByteResult"/> with specified detailed error.
+        /// </summary>
+        /// <param name="message">Error message</param>
+        /// <param name="Result">Result Result</param>
+        /// <param name="code">Error code</param>
+        /// <returns>
+        /// A new invalid <see cref="ByteResult"/> with specified detailed error.
+        /// </returns>
+        public new static ByteResult CreateErroResult(string message, byte Result, string code = "") => CreateErroResult(new IResultError[] { new ResultError { Code = code, Message = message } }, Result);
+
+        /// <summary>
         /// Returns a new <see cref="ByteResult"/> with specified detailed errors collection.
         /// </summary>
         /// <param name="errors">A errors collection</param>
@@ -28,7 +40,23 @@ namespace iTin.Core.ComponentModel.Results
         public new static ByteResult CreateErroResult(IResultError[] errors) =>
             new ByteResult
             {
-                Value = default,
+                Result = default,
+                Success = false,
+                Errors = (IResultError[])errors.Clone()
+            };
+
+        /// <summary>
+        /// Returns a new <see cref="ByteResult"/> with specified detailed errors collection.
+        /// </summary>
+        /// <param name="errors">A errors collection</param>
+        /// <param name="Result">Result Result</param>
+        /// <returns>
+        /// A new invalid <see cref="ByteResult"/> with specified detailed errors collection.
+        /// </returns>
+        public new static ByteResult CreateErroResult(IResultError[] errors, byte Result) =>
+            new ByteResult
+            {
+                Result = Result,
                 Success = false,
                 Errors = (IResultError[])errors.Clone()
             };
@@ -36,14 +64,14 @@ namespace iTin.Core.ComponentModel.Results
         /// <summary>
         /// Returns a new success result.
         /// </summary>
-        /// <param name="value">Response value</param>
+        /// <param name="Result">Result Result</param>
         /// <returns>
         /// A new valid <see cref="ByteResult"/>.
         /// </returns>
-        public new static ByteResult CreateSuccessResult(byte value) =>
+        public new static ByteResult CreateSuccessResult(byte Result) =>
             new ByteResult
             {
-                Value = value,
+                Result = Result,
                 Success = true,
                 Errors = new List<IResultError>()
             };
@@ -55,9 +83,20 @@ namespace iTin.Core.ComponentModel.Results
         /// <returns>
         /// A new <see cref="ByteResult"/> instance for specified exception.
         /// </returns>
-        public new static ByteResult FromException(System.Exception exception) =>
+        public new static ByteResult FromException(Exception exception) => FromException(exception, default);
+
+        /// <summary>
+        /// Creates a new <see cref="ByteResult"/> instance from known exception.
+        /// </summary>
+        /// <param name="exception">Target exception.</param>
+        /// <param name="Result">Result Result</param>
+        /// <returns>
+        /// A new <see cref="ByteResult"/> instance for specified exception.
+        /// </returns>
+        public new static ByteResult FromException(Exception exception, byte Result) =>
             new ByteResult
             {
+                Result = Result,
                 Success = false,
                 Errors = new List<IResultError> { new ResultExceptionError { Exception = exception } }
             };

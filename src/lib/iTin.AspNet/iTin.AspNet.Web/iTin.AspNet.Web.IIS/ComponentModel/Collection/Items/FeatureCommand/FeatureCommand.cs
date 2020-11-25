@@ -325,9 +325,9 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
 
         #endregion
 
-        #region protected virtual methods
+        #region private methods
 
-        #region [protected] {virtual} (void) OnNotifyFeatureCommandExecuted(NotifyFeatureCommandExecutedEventArgs): Raises the NotifyFeatureCommandExecuted event
+        #region [private] (void) OnNotifyFeatureCommandExecuted(NotifyFeatureCommandExecutedEventArgs): Raises the NotifyFeatureCommandExecuted event
         /// <summary>
         /// Raises the <see cref="NotifyFeatureCommandExecuted"/> event.
         /// </summary>
@@ -335,7 +335,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
         private void OnNotifyFeatureCommandExecuted(NotifyFeatureCommandExecutedEventArgs e) => NotifyFeatureCommandExecuted?.Invoke(this, e);
         #endregion
 
-        #region [protected] {virtual} (void) OnNotifyFeatureCommandExecuting(NotifyFeatureCommandExecutingEventArgs): Raises the NotifyFeatureCommandExecuting event
+        #region [private] (void) OnNotifyFeatureCommandExecuting(NotifyFeatureCommandExecutingEventArgs): Raises the NotifyFeatureCommandExecuting event
         /// <summary>
         /// Raises the <see cref="NotifyFeatureCommandExecuting"/> event.
         /// </summary>
