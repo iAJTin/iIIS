@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.4] - 
+## [1.0.4] - 2022-06-25
+
+### Fixes
+
+ - Upgrade Newtonsoft.Json nuget package to version 13.0.1 (without critical errors) and others nuget packages
 
 ### Changed
 
@@ -16,13 +20,18 @@ All notable changes to this project will be documented in this file.
   
     | Library | Version | Description |
     |:------|:------|:----------|
-    | iTin.AspNet.Web.IIS | 1.0.0.3 | Internet Information Services Library Calls |
+    | iTin.AspNet.Web.IIS | **1.0.0.4** | Internet Information Services Library Calls |
     | iTin.Core| **2.0.0.3** | Base library containing various extensions, helpers, common constants |
 	| iTin.Core.IO | 1.0.0.0 | Common I/O calls |
-	| iTin.Core.Models | 1.0.0.1 | Data models base |
-    | iTin.Logging| 1.0.0.0 | Logging library |
+	| iTin.Core.Models | **1.0.0.1** | Data models base |
+    | iTin.Logging| **1.0.0.1** | Logging library |
   	| iTin.Registry.Windows | **1.0.0.1** | Windows registry access |
  
+ ### Added
+
+  - New delivery published [Delivery 1.0.4].
+
+
 ## [1.0.3] - 2020-10-10
 
 ### Added

@@ -4,8 +4,15 @@ What is iIIS ?
 
 iIIS is a lightweight implementation that allows you to install and add features to an Internet Information Services (IIS) installation using .NET code.
 
+
 Changes in this version 1.0.4
 =============================
+
+· Fixes
+  -------
+
+   - Upgrade Newtonsoft.Json nuget package to version 13.0.1 (without critical errors) and others nuget packages
+
 
 · Changed
   -------
@@ -21,7 +28,7 @@ Changes in this version 1.0.4
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | Library                               Version   Description                                                           |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.AspNet.Web.IIS                   1.0.0.3   Internet Information Services Library Calls                           |
+    | iTin.AspNet.Web.IIS                   1.0.0.4   Internet Information Services Library Calls                           |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | iTin.Core                             2.0.0.3   Base library containing various extensions, helpers, common constants |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -29,10 +36,16 @@ Changes in this version 1.0.4
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | iTin.Core.Models                      1.0.0.1   Data models base                                                      |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Logging                          1.0.0.0   Logging library                                                       |
+    | iTin.Logging                          1.0.0.1   Logging library                                                       |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | iTin.Registry.Windows                 1.0.0.1   Windows registry access                                               |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+
+· Added
+  -----
+
+  - New delivery published v1.0.4
+
 
 v1.0.3
 ======
@@ -72,6 +85,7 @@ v1.0.3
     •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | iTin.Logging            1.0.0.0        Internet Information Services Library Calls                           |
     •——————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+
 
 v1.0.2
 ======
@@ -114,6 +128,7 @@ Library versions for current iIIS version (1.0.2)
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
 | iTin.AspNet.Web.IIS      1.0.2        Internet Information Services Library Calls                  |
 •————————————————————————————————————————————————————————————————————————————————————————————————————•
+
 
 Install via NuGet
 =================

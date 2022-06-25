@@ -113,7 +113,7 @@ If you want to test the application, you can use the installer that is provided 
 
 |Description|Version|
 |:------|:------|
-|iIISFeaturesSetup| [1.0.3] |
+|iIISFeaturesSetup| [1.0.4] |
 
 # How can I send feedback!!!
 
@@ -123,6 +123,6 @@ My email address is
 
 ![email.png][email] 
 
-[1.0.3]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.3
+[1.0.4]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.4
 
 [email]: ./assets/email.png "email"
