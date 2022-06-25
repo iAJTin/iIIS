@@ -164,4 +164,4 @@ All notable changes to this project will be documented in this file.
 [1.0.1]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.1
 [1.0.0]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.0
 
-[Delivery 1.0.3]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.3
+[Delivery 1.0.4]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.4
