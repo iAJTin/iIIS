@@ -1,18 +1,18 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+
+using iTin.Core.ComponentModel;
+using iTin.Core.ComponentModel.Results;
+
+using iTin.AspNet.Web.IIS.ComponentModel.Design;
+
 namespace iTin.AspNet.Web.IIS.ComponentModel
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Threading.Tasks;
-
-    using iTin.Core.ComponentModel;
-    using iTin.Core.ComponentModel.Results;
-
-    using Design;
-
     /// <summary>
     /// Class that defines a commands collection.
     /// </summary>
@@ -96,7 +96,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
                 resultTable.Add(featureCommand, await command.ExecuteAsync());
             }
 
-            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? BooleanResult.SuccessResult : BooleanResult.CreateErroResult("")));
+            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? BooleanResult.SuccessResult : BooleanResult.CreateErrorResult("")));
         }
         #endregion
 
@@ -129,7 +129,7 @@ namespace iTin.AspNet.Web.IIS.ComponentModel
                 resultTable.Add(featureCommand, command.Execute());
             }
 
-            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? BooleanResult.SuccessResult : BooleanResult.CreateErroResult("")));
+            OnNotifyFeatureCommandsCollectionFinish(new NotifyFeatureCommandsCollectionFinishEventArgs(resultTable.Values.All(t => t.Success) ? BooleanResult.SuccessResult : BooleanResult.CreateErrorResult("")));
         }
         #endregion
 

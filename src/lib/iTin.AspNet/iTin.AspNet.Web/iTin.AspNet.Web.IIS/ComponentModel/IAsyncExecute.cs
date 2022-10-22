@@ -1,10 +1,10 @@
 ﻿
+using System.Threading.Tasks;
+
+using iTin.Core.ComponentModel;
+
 namespace iTin.AspNet.Web.IIS.ComponentModel
 {
-    using System.Threading.Tasks;
-
-    using iTin.Core.ComponentModel;
-
     /// <summary>
     /// Defines a generic operations for a command
     /// </summary>

@@ -1,12 +1,12 @@
 ﻿
+using System;
+using System.Text;
+using System.Threading.Tasks;
+
+using IIS.Samples;
+
 namespace IIS
 {
-    using System;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    using Samples;
-
     class Program
     {
         static async Task Main(string[] args)

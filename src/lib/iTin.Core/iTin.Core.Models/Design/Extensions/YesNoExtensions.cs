@@ -1,15 +1,15 @@
 ﻿
+using iTin.Core.Models.Design.Enums;
+
 namespace iTin.Core.Models.Design
 {
-    using Enums;
-
     /// <summary>
-    /// Extensions methods for <see cref="YesNo"/> enumerated type. 
+    /// Extensions methods for <see cref="T:iTin.Core.Models.Design.Enums.YesNo"/> enumerated type. 
     /// </summary>
     public static class YesNoExtensions
     {
         /// <summary>
-        /// Converts a value of the enumerated type <see cref="YesNo"/> to boolean representation.
+        /// Converts a value of the enumerated type <see cref="T:iTin.Core.Models.Design.Enums.YesNo"/> to boolean representation.
         /// </summary>
         /// <param name="value">Value to convert.</param>
         /// <returns>

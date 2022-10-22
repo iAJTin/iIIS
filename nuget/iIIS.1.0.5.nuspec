@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>iIIS</id>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <title>iIIS</title>
     <authors>iAJTin</authors>
     <owners>iAJTin</owners>
@@ -19,6 +19,8 @@
       <group targetFramework="net461">
       </group>
       <group targetFramework=".NETStandard2.0">
+      </group>
+      <group targetFramework=".NETStandard2.1">
       </group>
     </dependencies>
   </metadata>

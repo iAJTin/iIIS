@@ -1,8 +1,8 @@
 ﻿
+using System;
+
 namespace iTin.AspNet.Web.IIS.ComponentModel
 {
-    using System;
-
     /// <summary>
     /// Defines a generic command.
     /// </summary>

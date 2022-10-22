@@ -1,16 +1,16 @@
 ﻿
+using System;
+using System.Diagnostics;
+using System.Windows.Forms;
+
+using iTin.AspNet.Web.IIS.ComponentModel;
+using iTin.AspNet.Web.IIS.ComponentModel.Design;
+
+using iTin.Core.ComponentModel;
+using iTin.Core.Models.Design.Enums;
+
 namespace IIS.FormsApp
 {
-    using System;
-    using System.Diagnostics;
-    using System.Windows.Forms;
-
-    using iTin.AspNet.Web.IIS.ComponentModel;
-    using iTin.AspNet.Web.IIS.ComponentModel.Design;
-
-    using iTin.Core.ComponentModel;
-    using iTin.Core.Models.Design.Enums;
-    
     public partial class IISFeaturesInstall : Form
     {
         public IISFeaturesInstall(Launcher launcher)
@@ -88,7 +88,7 @@ namespace IIS.FormsApp
             }
         }
 
-        private void NotifyFeatureCommandsCollectionStart(object sender, NotifyFeatureCommandsCollectionStartEventArgs e)
+        private static void NotifyFeatureCommandsCollectionStart(object sender, NotifyFeatureCommandsCollectionStartEventArgs e)
         {
         }
 

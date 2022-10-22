@@ -1,12 +1,12 @@
 ﻿
+using System;
+using System.Diagnostics;
+using System.Xml.Serialization;
+
+using Newtonsoft.Json;
+
 namespace iTin.AspNet.Web.IIS.Model
 {
-    using System;
-    using System.Diagnostics;
-    using System.Xml.Serialization;
-
-    using Newtonsoft.Json;
-
     /// <summary>
     /// This class allow defines the features collection to install in a <b>Internet Information Services</b>.
     /// </summary>

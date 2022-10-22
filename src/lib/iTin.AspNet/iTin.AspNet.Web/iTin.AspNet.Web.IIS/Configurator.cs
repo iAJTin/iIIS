@@ -1,16 +1,15 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+using iTin.AspNet.Web.IIS.ComponentModel;
+using iTin.AspNet.Web.IIS.ComponentModel.Enums;
+using iTin.AspNet.Web.IIS.Model;
+
+using iTin.Registry.Windows;
+
 namespace iTin.AspNet.Web.IIS
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-
-    using iTin.Registry.Windows;
-
-    using ComponentModel;
-    using ComponentModel.Enums;
-
-    using Model;
-
     /// <summary>
     /// Static class that allows you to install <b>Internet Information Services (IIS)</b> on your system, as well as additional features through code or a configuration <b>XML</b> file.
     /// </summary>

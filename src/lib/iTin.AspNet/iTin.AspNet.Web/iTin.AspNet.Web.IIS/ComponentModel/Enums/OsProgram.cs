@@ -1,13 +1,13 @@
 ﻿
+using System;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+using iTin.Core.ComponentModel;
+
 namespace iTin.AspNet.Web.IIS.ComponentModel.Enums
 {
-    using System;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
-    using iTin.Core.ComponentModel;
-
     /// <summary>
     /// Defines known os programs
     /// </summary>

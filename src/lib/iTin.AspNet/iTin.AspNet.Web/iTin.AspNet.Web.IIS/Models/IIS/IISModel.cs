@@ -1,12 +1,12 @@
 ﻿
+using System;
+using System.Diagnostics;
+using System.Xml.Serialization;
+
+using Newtonsoft.Json;
+
 namespace iTin.AspNet.Web.IIS.Model
 {
-    using System;
-    using System.Diagnostics;
-    using System.Xml.Serialization;
-
-    using Newtonsoft.Json;
-
     /// <summary>
     /// Root element of a <b>iTin Internet Information Services (IIIS)</b> configuration file that contains the custom definition of <b>Internet Information Services features</b>.
     /// </summary>

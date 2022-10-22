@@ -1,8 +1,8 @@
 ﻿
+using System;
+
 namespace iTin.AspNet.Web.IIS.ComponentModel.Design
 {
-    using System;
-
     /// <summary>
     /// Provides data to the <see cref="FeatureCommandsCollection.NotifyFeatureCommandsCollectionStart"/> event of an <see cref="FeatureCommandsCollection"/> object.
     /// </summary>

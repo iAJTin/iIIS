@@ -1,16 +1,19 @@
 ﻿
+using System;
+
+using Newtonsoft.Json;
+
 namespace iTin.Core.Models.Collections
 {
-    using System;
-
     /// <inheritdoc/>
     /// <summary>
-    /// A Specialization of <see cref="BaseSimpleModelCollection{TItem, TParent}" /> class.<br />.
+    /// A Specialization of <see cref="BaseSimpleModelCollection{TItem, TParent}"/> class.<br/>.
     /// Which acts as the base class for nodes of model which are of collection type
     /// </summary>
     /// <typeparam name="TItem">The type of elements in the list.</typeparam>
     /// <typeparam name="TParent">The owner type of list.</typeparam>
     /// <typeparam name="TSearch">The type of search element.</typeparam>
+    [JsonArray]
     [Serializable]
     public abstract class BaseComplexModelCollection<TItem, TParent, TSearch> : BaseSimpleModelCollection<TItem, TParent>
     {
@@ -21,7 +24,7 @@ namespace iTin.Core.Models.Collections
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseComplexModelCollection{TItem, TParent, TSearch}"/> class.
         /// </summary>
-        /// <param name="parent">c.</param>
+        /// <param name="parent">Parent type.</param>
         protected BaseComplexModelCollection(TParent parent) : base(parent)
         {
         }
@@ -57,17 +60,14 @@ namespace iTin.Core.Models.Collections
         /// <returns>
         /// <b>true</b> if <paramref name="value"/> is found in the <see cref="BaseComplexModelCollection{TItem, TParent, TSearch}"/>; otherwise, <b>false</b>.
         /// </returns>
-        public bool Contains(TSearch value)
-        {
-            return GetBy(value) != null;
-        }
+        public bool Contains(TSearch value) => GetBy(value) != null;
         #endregion
 
         #endregion
 
         #region public abstract methods
 
-        #region [public] (void) GetBy(TSearch): Returns the element specified
+        #region [public] {abstract} (void) GetBy(TSearch): Returns the element specified
         /// <summary>
         /// Returns the element specified.
         /// </summary>

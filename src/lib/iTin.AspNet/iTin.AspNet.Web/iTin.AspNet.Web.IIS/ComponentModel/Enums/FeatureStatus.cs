@@ -1,11 +1,11 @@
 ﻿
+using System;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 namespace iTin.AspNet.Web.IIS.ComponentModel.Enums
 {
-    using System;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     /// <summary>
     /// Defines a <b>Internet Information Services (IIS)</b> feature status.
     /// </summary>

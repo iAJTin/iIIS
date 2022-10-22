@@ -1,29 +1,23 @@
 ﻿
+using System;
+using System.Xml.Serialization;
+
+using Newtonsoft.Json;
+
 namespace iTin.Core.Models
 {
-    using System;
-    using System.Diagnostics;
-    using System.Xml.Serialization;
-
-    using Newtonsoft.Json;
-
     /// <summary>
     /// Defines a user custom property.
     /// </summary>
-    public partial class PropertyModel : ICloneable
+    public partial class Property : ICloneable
     {
-        #region private members
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private PropertiesModelCollection _owner;
-        #endregion
-
         #region interfaces
 
         #region ICloneable
 
-        #region private methods
+        #region explicit
 
-        #region [private] (object) Clone(): Creates a new object that is a copy of the current instance
+        #region (object) ICloneable.Clone(): Creates a new object that is a copy of the current instance
         /// <inheritdoc />
         /// <summary>
         /// Creates a new object that is a copy of the current instance.
@@ -49,8 +43,8 @@ namespace iTin.Core.Models
         /// <value>
         /// Property name
         /// </value>
-        [JsonProperty]
         [XmlAttribute]
+        [JsonProperty("name")]
         public string Name { get; set; }
         #endregion
 
@@ -61,33 +55,35 @@ namespace iTin.Core.Models
         /// <value>
         /// Property value
         /// </value>
-        [JsonProperty]
         [XmlAttribute]
+        [JsonProperty("value")]
         public string Value { get; set; }
         #endregion
 
-        #region [public] (PropertiesModelCollection) Owner: Gets the element that owns this
+        #region [public] (Properties) Owner: Gets the element that owns this
         /// <summary>
         /// 
         /// </summary>
         [XmlIgnore]
-        public PropertiesModelCollection Owner => _owner;
+        [JsonIgnore]
+        public Properties Owner { get; private set; }
+
         #endregion
 
         #endregion
 
         #region public methods
 
-        #region [public] (PropertyModel) Clone(): Clones this instance
+        #region [public] (Property) Clone(): Clones this instance
         /// <summary>
         /// Clones this instance.
         /// </summary>
         /// <returns>A new object that is a copy of this instance.</returns>
-        public PropertyModel Clone() => (PropertyModel)MemberwiseClone();
+        public Property Clone() => (Property)MemberwiseClone();
         #endregion
 
-        #region [public] (void) SetOwner(PropertiesModelCollection): Sets the element that owns this
-        internal void SetOwner(PropertiesModelCollection reference) => _owner = reference;
+        #region [public] (void) SetOwner(Properties): Sets the element that owns this
+        internal void SetOwner(Properties reference) => Owner = reference;
         #endregion
 
         #endregion
@@ -99,7 +95,7 @@ namespace iTin.Core.Models
         /// Returns a string that represents the current object.
         /// </summary>
         /// <returns>
-        /// A <see cref="string" /> that represents the current object.
+        /// A <see cref="T:System.String" /> that represents the current object.
         /// </returns>
         public override string ToString() => $"Name=\"{Name}\"";
         #endregion

@@ -1,12 +1,12 @@
 ﻿
+using System;
+
+using Newtonsoft.Json;
+
+using iTin.Core.Helpers;
+
 namespace iTin.AspNet.Web.IIS.Model
 {
-    using System;
-
-    using Newtonsoft.Json;
-
-    using iTin.Core.Helpers;
-
     /// <summary>
     /// Collection of Internet Information Services Feature. Each element defines a feature.
     /// </summary>

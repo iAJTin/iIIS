@@ -1,16 +1,16 @@
 ﻿
+using System;
+
+using iTin.Core.Helpers;
+using iTin.Core.Helpers.Enumerations;
+using iTin.Logging;
+
 namespace iTin.Core
 {
-    using System;
-
-    using Helpers;
-    using Helpers.Enumerations;
-    using Logging;
-
     /// <summary>
-    /// Static class than contains extension methods for <see cref="T:System.Byte" /> structure, <see cref="T:System.Int32" /> structure,
-    /// <see cref="T:System.UInt32" /> structure, <see cref="T:System.Int64" /> structure, <see cref="T:System.UInt64" /> structure,
-    /// <see cref="T:System.Short" /> structure and <see cref="T:System.UShort" /> structure.
+    /// Static class than contains extension methods for <see cref="byte"/> structure, <see cref="int"/> structure,
+    /// <see cref="uint"/> structure, <see cref="long"/> structure, <see cref="ulong"/> structure,
+    /// <see cref="short"/> structure and <see cref="ushort"/> structure.
     /// </summary> 
     public static class NumberExtensions
     {
@@ -68,6 +68,42 @@ namespace iTin.Core
             Logger.Instance.Info($"  > Output: {result}");
 
             return result;
+        }
+        #endregion
+
+
+        #region [public] {static} (float) FromIEEE754(this byte): Returns a float from half-precision floating-point value
+        /// <summary>
+        /// Returns a float from half-precision floating-point value.
+        /// </summary>
+        /// <param name="packet">A value codified as half-precision floating-point value</param>
+        /// <returns>
+        /// A <see cref="float"/> 
+        /// </returns>
+        public static float FromIEEE754(this byte packet)
+        {
+            var sign = packet.CheckBit(Bits.Bit15) ? -1 : 1;
+            var exponent = (packet >> 10) & 0x1f;
+            var mantissa = packet & 0x3ff;
+
+            switch (exponent)
+            {
+                // Infinities
+                case 0x1f:
+                    return sign == -1 ? float.NegativeInfinity : float.PositiveInfinity;
+
+                // Zero
+                case 0x00 when mantissa == 0x00:
+                    return sign * 0.0f;
+
+                // Subnormals Numbers
+                case 0x00:
+                    return sign * (2 ^ -14) * (0.0f + mantissa / 1024.0f);
+
+                // Normalized Numbers
+                default:
+                    return sign * (2 ^ (exponent - 0x0f)) * (1.0f + mantissa / 1024.0f);
+            }
         }
         #endregion
 
@@ -284,6 +320,42 @@ namespace iTin.Core
             SentinelHelper.IsTrue(onebyte > 1);
 
             return value.ToArray()[onebyte];
+        }
+        #endregion
+
+
+        #region [public] {static} (float) FromIEEE754(this int): Returns a float from half-precision floating-point value
+        /// <summary>
+        /// Returns a float from half-precision floating-point value.
+        /// </summary>
+        /// <param name="packet">A value codified as half-precision floating-point value</param>
+        /// <returns>
+        /// A <see cref="float"/> 
+        /// </returns>
+        public static float FromIEEE754(this int packet)
+        {
+            var sign = packet.CheckBit(Bits.Bit15) ? -1 : 1;
+            var exponent = (packet >> 10) & 0x1f;
+            var mantissa = packet & 0x3ff;
+
+            switch (exponent)
+            {
+                // Infinities
+                case 0x1f:
+                    return sign == -1 ? float.NegativeInfinity : float.PositiveInfinity;
+
+                // Zero
+                case 0x00 when mantissa == 0x00:
+                    return sign * 0.0f;
+
+                // Subnormals Numbers
+                case 0x00:
+                    return sign * (2 ^ -14) * (0.0f + mantissa / 1024.0f);
+
+                // Normalized Numbers
+                default:
+                    return sign * (2 ^ (exponent - 0x0f)) * (1.0f + mantissa / 1024.0f);
+            }
         }
         #endregion
 
@@ -531,6 +603,42 @@ namespace iTin.Core
             SentinelHelper.IsTrue(onebyte > 3);
 
             return value.ToArray()[onebyte];
+        }
+        #endregion
+
+
+        #region [public] {static} (float) FromIEEE754(this uint): Returns a float from half-precision floating-point value
+        /// <summary>
+        /// Returns a float from half-precision floating-point value.
+        /// </summary>
+        /// <param name="packet">A value codified as half-precision floating-point value</param>
+        /// <returns>
+        /// A <see cref="float"/> 
+        /// </returns>
+        public static float FromIEEE754(this uint packet)
+        {
+            var sign = packet.CheckBit(Bits.Bit15) ? -1 : 1;
+            var exponent = (packet >> 10) & 0x1f;
+            var mantissa = packet & 0x3ff;
+
+            switch (exponent)
+            {
+                // Infinities
+                case 0x1f:
+                    return sign == -1 ? float.NegativeInfinity : float.PositiveInfinity;
+
+                // Zero
+                case 0x00 when mantissa == 0x00:
+                    return sign * 0.0f;
+
+                // Subnormals Numbers
+                case 0x00:
+                    return sign * (2 ^ -14) * (0.0f + mantissa / 1024.0f);
+
+                // Normalized Numbers
+                default:
+                    return sign * (2 ^ (exponent - 0x0f)) * (1.0f + mantissa / 1024.0f);
+            }
         }
         #endregion
 
@@ -817,6 +925,42 @@ namespace iTin.Core
         #endregion
 
 
+        #region [public] {static} (float) FromIEEE754(this short): Returns a float from half-precision floating-point value
+        /// <summary>
+        /// Returns a float from half-precision floating-point value.
+        /// </summary>
+        /// <param name="packet">A value codified as half-precision floating-point value</param>
+        /// <returns>
+        /// A <see cref="float"/> 
+        /// </returns>
+        public static float FromIEEE754(this short packet)
+        {
+            var sign = packet.CheckBit(Bits.Bit15) ? -1 : 1;
+            var exponent = (packet >> 10) & 0x1f;
+            var mantissa = packet & 0x3ff;
+
+            switch (exponent)
+            {
+                // Infinities
+                case 0x1f:
+                    return sign == -1 ? float.NegativeInfinity : float.PositiveInfinity;
+
+                // Zero
+                case 0x00 when mantissa == 0x00:
+                    return sign * 0.0f;
+
+                // Subnormals Numbers
+                case 0x00:
+                    return sign * (2 ^ -14) * (0.0f + mantissa / 1024.0f);
+
+                // Normalized Numbers
+                default:
+                    return sign * (2 ^ (exponent - 0x0f)) * (1.0f + mantissa / 1024.0f);
+            }
+        }
+        #endregion
+
+
         #region [public] {static} (byte[]) ToArray(this short): Returns reference value splitted into bytes as a 2 byte array.
         /// <summary>
         /// Returns reference value splitted into bytes as a 2 byte array
@@ -984,6 +1128,42 @@ namespace iTin.Core
             SentinelHelper.IsTrue(onebyte > 1);
 
             return value.ToArray()[onebyte];
+        }
+        #endregion
+
+
+        #region [public] {static} (float) FromIEEE754(this ushort): Returns a float from half-precision floating-point value
+        /// <summary>
+        /// Returns a float from half-precision floating-point value.
+        /// </summary>
+        /// <param name="packet">A value codified as half-precision floating-point value</param>
+        /// <returns>
+        /// A <see cref="float"/> 
+        /// </returns>
+        public static float FromIEEE754(this ushort packet)
+        {
+            var sign = packet.CheckBit(Bits.Bit15) ? -1 : 1;
+            var exponent = (packet >> 10) & 0x1f;
+            var mantissa = packet & 0x3ff;
+
+            switch (exponent)
+            {
+                // Infinities
+                case 0x1f:
+                    return sign == -1 ? float.NegativeInfinity : float.PositiveInfinity;
+
+                // Zero
+                case 0x00 when mantissa == 0x00:
+                    return sign * 0.0f;
+
+                // Subnormals Numbers
+                case 0x00:
+                    return sign * (2 ^ -14) * (0.0f + mantissa / 1024.0f);
+
+                // Normalized Numbers
+                default:
+                    return sign * (2 ^ (exponent - 0x0f)) * (1.0f + mantissa / 1024.0f);
+            }
         }
         #endregion
 

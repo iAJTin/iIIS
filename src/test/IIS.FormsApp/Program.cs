@@ -1,9 +1,9 @@
 ﻿
+using System;
+using System.Windows.Forms;
+
 namespace IIS.FormsApp
 {
-    using System;
-    using System.Windows.Forms;
-
     static class Program
     {
         /// <summary>

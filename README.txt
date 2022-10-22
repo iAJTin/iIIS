@@ -5,8 +5,50 @@ What is iIIS ?
 iIIS is a lightweight implementation that allows you to install and add features to an Internet Information Services (IIS) installation using .NET code.
 
 
-Changes in this version 1.0.4
-=============================
+Changes in this version v1.0.5
+==============================
+
+· Added
+  -----
+    
+    - Add support for netstandard2.1
+ 
+        - Add SplitEnumerator ref struct.
+   
+        - Add support for the use of the ~ character in the iTin.Core.IO library
+
+        - ByteReader class rewritten to work with Span in net core projects.
+
+· Changed
+  -------
+
+    - Changed IResultGeneric interface. Changed Value property name by Result (for code clarify).
+
+      · This change may have implications in your final code, it is resolved by changing Value to Result
+
+    - Update result classes for support more scenaries.
+
+    - Library versions for this version
+
+    •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | Library                               Version   Description                                                           |
+    •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.AspNet.Web.IIS                   1.0.0.5   Internet Information Services Library Calls                           |
+    •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Core                             2.0.0.6   Base library containing various extensions, helpers, common constants |
+    •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Core.IO                          1.0.0.2   Common I/O calls                                                      |
+    •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Core.Models                      1.0.0.3   Data models base                                                      |
+    •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Logging                          1.0.0.2   Logging library                                                       |
+    •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | iTin.Registry.Windows                 1.0.0.3   Windows registry access                                               |
+    •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+
+
+v1.0.4
+======
 
 · Fixes
   -------

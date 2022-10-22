@@ -66,11 +66,11 @@
       <Name>iTin.AspNet.Web.IIS</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\lib\iTin.Core\iTin.Core.Models\iTin.Core.Models.csproj">
-      <Project>{bfb8ca97-d5a3-4ebb-86aa-94cada78a3a2}</Project>
+      <Project>{177F7461-4960-4B32-B433-0AB6BA4412BA}</Project>
       <Name>iTin.Core.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\lib\iTin.Core\iTin.Core\iTin.Core.csproj">
-      <Project>{b43d3f4d-89e7-453c-aad5-af727cd4ee40}</Project>
+      <Project>{1F07905C-2F22-4215-86E6-31255DCCCD79}</Project>
       <Name>iTin.Core</Name>
     </ProjectReference>
   </ItemGroup>

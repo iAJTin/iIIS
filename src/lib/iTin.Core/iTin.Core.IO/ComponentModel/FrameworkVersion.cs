@@ -1,9 +1,18 @@
 
+#if NETSTANDARD2_1 || NET5_0_OR_GREATER
+
+    using System.Linq;
+
+#else
+
+    using System;
+
+#endif
+
+using System.Runtime.Versioning;
+
 namespace iTin.Core.IO
 {
-    using System;
-    using System.Runtime.Versioning;
-
     /// <summary>
     /// This class allows to obtain the .net framework folder for a specific version.
     /// </summary>
@@ -13,16 +22,28 @@ namespace iTin.Core.IO
 
         #region [internal] FrameworkVersion(TargetFrameworkAttribute): Initialize a new instance of the class
         /// <summary>
-        /// Initialize a new instance of the <see cref="FrameworkVersion"/> class.
+        /// Initialize a new instance of the <see cref="T:iTin.Core.Drawing.Clipping" /> class.
         /// </summary>
         /// <param name="frameworkAttribute">Framework compiled information</param>
         internal FrameworkVersion(TargetFrameworkAttribute frameworkAttribute)
         {
-            var items = frameworkAttribute.FrameworkName.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
+
+#if NETSTANDARD2_1 || NET5_0_OR_GREATER
+
+            var items = frameworkAttribute.FrameworkName.SplitString(new[] {','}).AsEnumerable().ToList();
+            VersionName = items.ElementAt(0);
+
+            var frameworkVersionItems = items.ElementAt(1).SplitString(new[] {'='}).AsEnumerable();
+            VersionNumber = frameworkVersionItems.ElementAt(1).Replace("v", string.Empty);
+
+#else
+            var items = frameworkAttribute.FrameworkName.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             VersionName = items[0];
 
-            var frameworkVersionItems = items[1].Split(new[] {'='}, StringSplitOptions.RemoveEmptyEntries);
+            var frameworkVersionItems = items[1].Split(new[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
             VersionNumber = frameworkVersionItems[1].Replace("v", string.Empty);
+
+#endif
         }
         #endregion
 
@@ -78,6 +99,11 @@ namespace iTin.Core.IO
             bool isNetCore = VersionName.Contains("NETCore");
             if (isNetCore)
             {
+                if (float.Parse(VersionNumber) >= 60f)
+                {
+                    return $"net{VersionNumber}";
+                }
+
                 return $"netcoreapp{VersionNumber}";
             }
 

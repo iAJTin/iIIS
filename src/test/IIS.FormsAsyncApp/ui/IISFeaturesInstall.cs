@@ -1,17 +1,17 @@
 ﻿
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+using iTin.AspNet.Web.IIS.ComponentModel;
+using iTin.AspNet.Web.IIS.ComponentModel.Design;
+
+using iTin.Core.ComponentModel;
+using iTin.Core.Models.Design.Enums;
+
 namespace IIS.FormsApp
 {
-    using System;
-    using System.Diagnostics;
-    using System.Threading.Tasks;
-    using System.Windows.Forms;
-
-    using iTin.AspNet.Web.IIS.ComponentModel;
-    using iTin.AspNet.Web.IIS.ComponentModel.Design;
-
-    using iTin.Core.ComponentModel;
-    using iTin.Core.Models.Design.Enums;
-    
     public partial class IISFeaturesInstall : Form
     {
         private delegate void SafeUpdateProgressBarDelegate();

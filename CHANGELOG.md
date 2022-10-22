@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 
+
+### Added
+
+ 1. Add support for **netstandard2.1** 
+ 
+   - Add **SplitEnumerator** ref struct.
+   
+   - Add support for the use of the **~** character in the **iTin.Core.IO** library
+
+   - **ByteReader** class rewritten to work with **Span** in net core projects.
+
+### Changed
+ 
+ - Library versions for this version
+  
+    | Library | Version | Description |
+    |:------|:------|:----------|
+    | iTin.AspNet.Web.IIS | **1.0.0.5** | Internet Information Services Library Calls |
+    | iTin.Core | **2.0.0.6** | Base library containing various extensions, helpers, common constants |
+	| iTin.Core.IO | **1.0.0.2** | Common I/O calls |
+	| iTin.Core.Models | **1.0.0.3** | Data models base |
+    | iTin.Logging | **1.0.0.2** | Logging library |
+  	| iTin.Registry.Windows | **1.0.0.3** | Windows registry access |
+ 
+ ### Added
+
+  - New delivery published [Delivery 1.0.5].
+
 ## [1.0.4] - 2022-06-25
 
 ### Fixes
@@ -158,11 +187,13 @@ All notable changes to this project will be documented in this file.
 |iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
 |iTin.AspNet.Web.IIS| 1.0.0 | Internet Information Services Library Calls |
 
+[1.0.5]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.5
 [1.0.4]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.4
 [1.0.3]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.3
 [1.0.2]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.2
 [1.0.1]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.1
 [1.0.0]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.0
 
+[Delivery 1.0.5]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.5
 [Delivery 1.0.4]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.4
 [Delivery 1.0.3]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.3

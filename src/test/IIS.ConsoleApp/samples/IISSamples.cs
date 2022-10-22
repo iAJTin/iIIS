@@ -1,15 +1,15 @@
 ﻿
+using System;
+using System.Linq;
+using System.Text;
+
+using iTin.AspNet.Web.IIS;
+using iTin.AspNet.Web.IIS.ComponentModel;
+using iTin.AspNet.Web.IIS.ComponentModel.Design;
+using iTin.AspNet.Web.IIS.Model;
+
 namespace IIS.Samples
 {
-    using System;
-    using System.Linq;
-    using System.Text;
-
-    using iTin.AspNet.Web.IIS;
-    using iTin.AspNet.Web.IIS.ComponentModel;
-    using iTin.AspNet.Web.IIS.ComponentModel.Design;
-    using iTin.AspNet.Web.IIS.Model;
-
     public static class IISSamples
     {
         // Configures IIS features from XML configuration file

@@ -1,10 +1,10 @@
 ﻿
+using System;
+
+using iTin.AspNet.Web.IIS.ComponentModel.Enums;
+
 namespace iTin.AspNet.Web.IIS.ComponentModel.Design
 {
-    using System;
-
-    using Enums;
-
     /// <summary>
     /// Provides data to the <see cref="FeatureCommand.NotifyFeatureCommandExecuting"/> event of an <see cref="FeatureCommand"/> object.
     /// </summary>

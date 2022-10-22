@@ -1,18 +1,18 @@
 ﻿
+using System;
+using System.Text;
+using System.Threading.Tasks;
+
+using iTin.Core;
+using iTin.Core.ComponentModel;
+using iTin.Core.ComponentModel.Results;
+using iTin.Core.Helpers;
+
+using iTin.AspNet.Web.IIS.ComponentModel.Design;
+using iTin.AspNet.Web.IIS.ComponentModel.Enums;
+
 namespace iTin.AspNet.Web.IIS.ComponentModel
 {
-    using System;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    using iTin.Core;
-    using iTin.Core.ComponentModel;
-    using iTin.Core.ComponentModel.Results;
-    using iTin.Core.Helpers;
-
-    using Design;
-    using Enums;
-
     /// <summary>
     /// Interface specialization <see cref="ICommand"/>.
     /// Class that defines a command that installs an <b>Internet Information Services (IIS)</b> feature.

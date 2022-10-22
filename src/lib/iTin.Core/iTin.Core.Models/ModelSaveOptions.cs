@@ -1,13 +1,13 @@
 ﻿
+using System.Text;
+
+using iTin.Core.ComponentModel;
+
 namespace iTin.Core.Models
 {
-    using System.Text;
-
-    using iTin.Core.ComponentModel;
-
     /// <summary>
     /// Defines file save options. Allows defining if the directory is created automatically if it does not exist, output document without indentation. 
-    /// By defaults uses <c>UTF8</c> encoding.
+    /// By defaults uses <b>UTF8</b> encoding.
     /// </summary>
     public class ModelSaveOptions
     {
@@ -15,7 +15,7 @@ namespace iTin.Core.Models
 
         #region [public] ModelSaveOptions(): Initializes a new instance of the class
         /// <summary>
-        /// Initializes a new instance of the <see cref="ModelSaveOptions" /> class.
+        /// Initializes a new instance of the <see cref="T:iTin.Core.Models.ModelSaveOptions" /> class.
         /// </summary>
         public ModelSaveOptions()
         {
@@ -31,12 +31,12 @@ namespace iTin.Core.Models
 
         #region [public] {static} (ModelSaveOptions) Default: Gets a reference that contains default options for save, by default it creates the directory if it does not exist
         /// <summary>
-        /// Gets a reference that contains default options for save, by default it creates the directory if it does not exist.
+        /// Gets a reference that contains default options for save, by default it creates the directory if it does not exist, uses <see cref="T:System.Text.Encoding.UTF8"/> encoding and not applies indent.
         /// </summary>
         /// <value>
-        /// A <see cref="ModelSaveOptions"/> that contains default options for save.
+        /// A <see cref="T:iTin.Core.Models.ModelSaveOptions"/> that contains default options for save.
         /// </value>
-        public static ModelSaveOptions Default => new ModelSaveOptions();
+        public static ModelSaveOptions Default => new();
         #endregion
 
         #endregion
@@ -79,10 +79,10 @@ namespace iTin.Core.Models
 
         #region [public] (SaveOptions) ToSaveOptions(): Converts this options to new SaveOptions
         /// <summary>
-        /// Convert this options to new <see cref="SaveOptions"/> instance.
+        /// Convert this options to new <see cref="T:iTin.Core.ComponentModel.SaveOptions"/> instance.
         /// </summary>
         /// <value>
-        /// A <see cref="SaveOptions"/> reference.
+        /// A <see cref="T:iTin.Core.ComponentModel.SaveOptions"/> reference.
         /// </value>
         public SaveOptions ToSaveOptions() => new SaveOptions { CreateFolderIfNotExist = CreateFolderIfNotExist};
         #endregion

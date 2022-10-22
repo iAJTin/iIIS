@@ -1,11 +1,11 @@
 ﻿
+using System;
+using System.Text;
+
+using IIS.Samples;
+
 namespace IIS
 {
-    using System;
-    using System.Text;
-
-    using Samples;
-
     class Program
     {
         static void Main(string[] args)

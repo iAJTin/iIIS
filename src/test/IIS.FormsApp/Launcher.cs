@@ -1,15 +1,15 @@
 ﻿
+using System.Diagnostics;
+
+using iTin.AspNet.Web.IIS;
+using iTin.AspNet.Web.IIS.ComponentModel;
+using iTin.AspNet.Web.IIS.Model;
+
+using iTin.Core.Helpers;
+using iTin.Core.Models.Design.Enums;
+
 namespace IIS.FormsApp
 {
-    using System.Diagnostics;
-
-    using iTin.AspNet.Web.IIS;
-    using iTin.AspNet.Web.IIS.ComponentModel;
-    using iTin.AspNet.Web.IIS.Model;
-
-    using iTin.Core.Helpers;
-    using iTin.Core.Models.Design.Enums;
-
     public class Launcher
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]

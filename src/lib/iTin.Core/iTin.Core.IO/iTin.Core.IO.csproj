@@ -1,20 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>1.0.0.0</Version>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Version>1.0.0.2</Version>
+		<Description>Input/Output calls</Description>
+		<Copyright>Copyright © 2020</Copyright>
+		<PackageProjectUrl></PackageProjectUrl>
+		<PackageId>iTin.Core.IO</PackageId>
+		<Company>iTin</Company>
+		<Product>iTin.Core.IO</Product>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="File.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\iTin.Registry\iTin.Registry.Windows\iTin.Registry.Windows.csproj" />
-    <ProjectReference Include="..\iTin.Core\iTin.Core.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\iTin.Core\iTin.Core.csproj" />
+		<ProjectReference Include="..\..\iTin.Registry\iTin.Registry.Windows\iTin.Registry.Windows.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -1,15 +1,15 @@
 ﻿
+using System;
+
+using iTin.Core.ComponentModel;
+using iTin.Core.ComponentModel.Results;
+using iTin.Core.Helpers;
+using iTin.Logging;
+
+using NativeIO = System.IO;
+
 namespace iTin.Core.IO
 {
-    using System;
-
-    using iTin.Core;
-    using iTin.Core.ComponentModel;
-    using iTin.Core.ComponentModel.Results;
-    using iTin.Core.Helpers;
-
-    using NativeIO = System.IO;
-
     /// <summary>
     /// Static class than contains extension methods for objects of type <see cref="T:System.IO.Stream" />.
     /// </summary> 
@@ -18,7 +18,7 @@ namespace iTin.Core.IO
         /// <summary>
         /// Saves this stream into a file with name specified by parameter <paramref name="fileName"/>.
         /// You can indicate whether to automatically create the destination path if it does not exist. By default it will try to create the destination path.
-        /// The use of the <c>~</c> character is allowed to indicate relative paths, and you can also use <b>UNC</b> path.
+        /// The use of the <b>~</b> character is allowed to indicate relative paths, and you can also use <b>UNC</b> path.
         /// </summary>
         /// <param name="stream">Stream to save</param>
         /// <param name="fileName">Destination file path. Absolute or relative (~) paths are allowed</param>
@@ -28,14 +28,24 @@ namespace iTin.Core.IO
         /// </returns>
         public static IResult SaveToFile(this NativeIO.Stream stream, string fileName, SaveOptions options = null)
         {
+            Logger.Instance.Debug("");
+            Logger.Instance.Debug($" Assembly: {typeof(StreamExtensions).Assembly.GetName().Name}, v{typeof(StreamExtensions).Assembly.GetName().Version}, Namespace: {typeof(StreamExtensions).Namespace}, Class: {nameof(StreamExtensions)}");
+            Logger.Instance.Debug(" Saves this stream into a file with name specified by filename");
+            Logger.Instance.Debug($" > Signature: ({typeof(IResult)}) SaveToFile(this {typeof(NativeIO.Stream)}, {typeof(string)})");
+
             SentinelHelper.ArgumentNull(stream, nameof(stream));
+            Logger.Instance.Debug($"   > stream: {stream.Length} bytes");
+
             SentinelHelper.ArgumentNull(fileName, nameof(fileName));
+            Logger.Instance.Debug($"   > fileName: {fileName}");
 
             try
             {
                 IResult saveResult;
                 using (var memoryStream = stream as NativeIO.MemoryStream ?? stream.ToMemoryStream())
                 {
+                    Logger.Instance.Debug(" > Output: Success: True");
+
                     saveResult = memoryStream.SaveToFile(fileName, options);
                 }
 
@@ -43,6 +53,9 @@ namespace iTin.Core.IO
             }
             catch (Exception ex)
             {
+                Logger.Instance.Error("Error while save stream to file", ex);
+                Logger.Instance.Info("  > Output: Success: False");
+
                 return BooleanResult.FromException(ex);
             }
         }
