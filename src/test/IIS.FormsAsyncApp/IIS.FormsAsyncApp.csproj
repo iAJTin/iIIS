@@ -95,17 +95,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\iTin\iTin.Core\iTin.Core.Models\src\iTin.Core.Models.csproj">
+      <Project>{335D37C4-6E46-4D7A-BD68-552137514593}</Project>
+      <Name>iTin.Core.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\iTin\iTin.Core\iTin.Core\src\iTin.Core.csproj">
+      <Project>{26D086FE-7405-4FFF-8755-6BDCAE7198A8}</Project>
+      <Name>iTin.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\lib\iTin.AspNet\iTin.AspNet.Web\iTin.AspNet.Web.IIS\iTin.AspNet.Web.IIS.csproj">
       <Project>{66108e17-bdf9-41f3-be43-1b4386d003cc}</Project>
       <Name>iTin.AspNet.Web.IIS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\lib\iTin.Core\iTin.Core.Models\iTin.Core.Models.csproj">
-      <Project>{177F7461-4960-4B32-B433-0AB6BA4412BA}</Project>
-      <Name>iTin.Core.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\lib\iTin.Core\iTin.Core\iTin.Core.csproj">
-      <Project>{1F07905C-2F22-4215-86E6-31255DCCCD79}</Project>
-      <Name>iTin.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

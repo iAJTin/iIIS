@@ -11,6 +11,8 @@ Changes in this version v1.0.5
 · Added
   -----
     
+    - Multiple Repository is used.
+
     - Add support for netstandard2.1
  
         - Add SplitEnumerator ref struct.
@@ -35,13 +37,13 @@ Changes in this version v1.0.5
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | iTin.AspNet.Web.IIS                   1.0.0.5   Internet Information Services Library Calls                           |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Core                             2.0.0.6   Base library containing various extensions, helpers, common constants |
+    | iTin.Core                             2.0.0.7   Base library containing various extensions, helpers, common constants |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Core.IO                          1.0.0.2   Common I/O calls                                                      |
+    | iTin.Core.IO                          1.0.0.3   Common I/O calls                                                      |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | iTin.Core.Models                      1.0.0.3   Data models base                                                      |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Logging                          1.0.0.2   Logging library                                                       |
+    | iTin.Logging                          1.0.0.3   Logging library                                                       |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | iTin.Registry.Windows                 1.0.0.3   Windows registry access                                               |
     •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•

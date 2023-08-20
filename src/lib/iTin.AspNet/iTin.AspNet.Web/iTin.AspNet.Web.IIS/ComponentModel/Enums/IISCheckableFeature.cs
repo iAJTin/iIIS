@@ -4,133 +4,132 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace iTin.AspNet.Web.IIS.ComponentModel.Enums
+namespace iTin.AspNet.Web.IIS.ComponentModel.Enums;
+
+/// <summary>
+/// Defines a <b>Internet Information Services (IIS)</b> checkable feature.
+/// </summary>
+[Serializable]
+[JsonConverter(typeof(StringEnumConverter))]
+public enum IISCheckableFeature
 {
     /// <summary>
-    /// Defines a <b>Internet Information Services (IIS)</b> checkable feature.
+    /// ASPNET feature.
     /// </summary>
-    [Serializable]
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum IISCheckableFeature
-    {
-        /// <summary>
-        /// ASPNET feature.
-        /// </summary>
-        ASPNET,
+    ASPNET,
 
-        /// <summary>
-        /// ASPNET45 feature.
-        /// </summary>
-        ASPNET45,
+    /// <summary>
+    /// ASPNET45 feature.
+    /// </summary>
+    ASPNET45,
 
-        /// <summary>
-        /// BasicAuthentication feature.
-        /// </summary>
-        BasicAuthentication,
+    /// <summary>
+    /// BasicAuthentication feature.
+    /// </summary>
+    BasicAuthentication,
 
-        /// <summary>
-        /// CustomLogging feature.
-        /// </summary>
-        CustomLogging,
+    /// <summary>
+    /// CustomLogging feature.
+    /// </summary>
+    CustomLogging,
 
-        /// <summary>
-        /// DefaultDocument feature.
-        /// </summary>
-        DefaultDocument,
+    /// <summary>
+    /// DefaultDocument feature.
+    /// </summary>
+    DefaultDocument,
 
-        /// <summary>
-        /// DirectoryBrowsing feature.
-        /// </summary>
-        DirectoryBrowse,
+    /// <summary>
+    /// DirectoryBrowsing feature.
+    /// </summary>
+    DirectoryBrowse,
 
-        /// <summary>
-        /// HttpCompressionStatic feature.
-        /// </summary>
-        HttpCompressionStatic,
+    /// <summary>
+    /// HttpCompressionStatic feature.
+    /// </summary>
+    HttpCompressionStatic,
 
-        /// <summary>
-        /// HttpErrors feature.
-        /// </summary>
-        HttpErrors,
+    /// <summary>
+    /// HttpErrors feature.
+    /// </summary>
+    HttpErrors,
 
-        /// <summary>
-        /// HttpLogging feature.
-        /// </summary>
-        HttpLogging,
+    /// <summary>
+    /// HttpLogging feature.
+    /// </summary>
+    HttpLogging,
 
-        /// <summary>
-        /// HttpRedirect feature.
-        /// </summary>
-        HttpRedirect,
+    /// <summary>
+    /// HttpRedirect feature.
+    /// </summary>
+    HttpRedirect,
 
-        /// <summary>
-        /// HttpTracing feature.
-        /// </summary>
-        HttpTracing,
+    /// <summary>
+    /// HttpTracing feature.
+    /// </summary>
+    HttpTracing,
 
-        /// <summary>
-        /// IPSecurity feature.
-        /// </summary>
-        IPSecurity,
+    /// <summary>
+    /// IPSecurity feature.
+    /// </summary>
+    IPSecurity,
 
-        /// <summary>
-        /// ISAPIExtensions feature.
-        /// </summary>
-        ISAPIExtensions,
+    /// <summary>
+    /// ISAPIExtensions feature.
+    /// </summary>
+    ISAPIExtensions,
 
-        /// <summary>
-        /// ISAPIFilter feature.
-        /// </summary>
-        ISAPIFilter,
+    /// <summary>
+    /// ISAPIFilter feature.
+    /// </summary>
+    ISAPIFilter,
 
-        /// <summary>
-        /// LegacyScripts feature.
-        /// </summary>
-        LegacyScripts,
+    /// <summary>
+    /// LegacyScripts feature.
+    /// </summary>
+    LegacyScripts,
 
-        /// <summary>
-        /// ManagementConsole feature.
-        /// </summary>
-        ManagementConsole,
+    /// <summary>
+    /// ManagementConsole feature.
+    /// </summary>
+    ManagementConsole,
 
-        /// <summary>
-        /// Metabase feature.
-        /// </summary>
-        Metabase,
+    /// <summary>
+    /// Metabase feature.
+    /// </summary>
+    Metabase,
 
-        /// <summary>
-        /// NetFxExtensibility feature.
-        /// </summary>
-        NetFxExtensibility,
+    /// <summary>
+    /// NetFxExtensibility feature.
+    /// </summary>
+    NetFxExtensibility,
 
-        /// <summary>
-        /// NetFxExtensibility45 feature.
-        /// </summary>
-        NetFxExtensibility45,
+    /// <summary>
+    /// NetFxExtensibility45 feature.
+    /// </summary>
+    NetFxExtensibility45,
 
-        /// <summary>
-        /// PowerShellProvider feature.
-        /// </summary>
-        PowerShellProvider,
+    /// <summary>
+    /// PowerShellProvider feature.
+    /// </summary>
+    PowerShellProvider,
 
-        /// <summary>
-        /// RequestFiltering feature.
-        /// </summary>
-        RequestFiltering,
+    /// <summary>
+    /// RequestFiltering feature.
+    /// </summary>
+    RequestFiltering,
 
-        /// <summary>
-        /// StaticContent feature.
-        /// </summary>
-        StaticContent,
+    /// <summary>
+    /// StaticContent feature.
+    /// </summary>
+    StaticContent,
 
-        /// <summary>
-        /// WindowsAuthentication feature.
-        /// </summary>
-        WindowsAuthentication,
+    /// <summary>
+    /// WindowsAuthentication feature.
+    /// </summary>
+    WindowsAuthentication,
 
-        /// <summary>
-        /// WMICompatibility feature.
-        /// </summary>
-        WMICompatibility,
-    }
+    /// <summary>
+    /// WMICompatibility feature.
+    /// </summary>
+    WMICompatibility,
 }

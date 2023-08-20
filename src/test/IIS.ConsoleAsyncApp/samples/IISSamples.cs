@@ -19,7 +19,7 @@ namespace IIS.Samples
             Console.WriteLine();
             Console.WriteLine($@"> Configures IIS features from XML configuration file");
 
-            IISModel model = IISModel.LoadFromFile("~\\resources\\IIS-Features.xml");
+            IISModel model = await IISModel.LoadFromFileAsync("~\\resources\\IIS-Features.xml");
             FeatureCommandsCollection commands = Configurator.CreateCommands(model, CommandOptions.SilentModeDeactivated);
             commands.NotifyFeatureCommandCollectionExecuting += NotifyFeatureCommandCollectionExecuting;
             commands.NotifyFeatureCommandCollectionExecuted += NotifyFeatureCommandCollectionExecuted;
@@ -95,8 +95,7 @@ namespace IIS.Samples
             Console.WriteLine($@"  > Features to install");
             foreach (var command in commands)
             {
-                var currentFeatureCommand = command as FeatureCommand;
-                if (currentFeatureCommand == null)
+                if (!(command is FeatureCommand currentFeatureCommand))
                 {
                     continue;
                 }

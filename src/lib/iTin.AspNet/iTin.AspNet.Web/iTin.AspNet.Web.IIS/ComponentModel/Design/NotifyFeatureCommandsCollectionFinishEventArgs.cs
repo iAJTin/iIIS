@@ -3,27 +3,26 @@ using System;
 
 using iTin.Core.ComponentModel;
 
-namespace iTin.AspNet.Web.IIS.ComponentModel.Design
+namespace iTin.AspNet.Web.IIS.ComponentModel.Design;
+
+/// <summary>
+/// Provides data to the <see cref="FeatureCommandsCollection.NotifyFeatureCommandsCollectionFinish"/> event of an <see cref="FeatureCommandsCollection"/> object.
+/// </summary>
+public class NotifyFeatureCommandsCollectionFinishEventArgs : EventArgs
 {
     /// <summary>
-    /// Provides data to the <see cref="FeatureCommandsCollection.NotifyFeatureCommandsCollectionFinish"/> event of an <see cref="FeatureCommandsCollection"/> object.
+    /// Initializes a new instance of the <see cref="NotifyFeatureCommandsCollectionFinishEventArgs"/> class.
     /// </summary>
-    public class NotifyFeatureCommandsCollectionFinishEventArgs : EventArgs
+    public NotifyFeatureCommandsCollectionFinishEventArgs(IResult processResult)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NotifyFeatureCommandsCollectionFinishEventArgs"/> class.
-        /// </summary>
-        public NotifyFeatureCommandsCollectionFinishEventArgs(IResult processResult)
-        {
-            Result = processResult;
-        }
-
-        /// <summary>
-        /// Gets a value that contains the commands execution result.
-        /// </summary>
-        /// <value>
-        /// Operation result
-        /// </value>
-        public IResult Result { get; }
+        Result = processResult;
     }
+
+    /// <summary>
+    /// Gets a value that contains the commands execution result.
+    /// </summary>
+    /// <value>
+    /// Operation result
+    /// </value>
+    public IResult Result { get; }
 }

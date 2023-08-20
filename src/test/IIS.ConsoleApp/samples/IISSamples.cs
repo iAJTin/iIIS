@@ -94,8 +94,7 @@ namespace IIS.Samples
             Console.WriteLine($@"  > Features to install");
             foreach (var command in commands)
             {
-                var currentFeatureCommand = command as FeatureCommand;
-                if (currentFeatureCommand == null)
+                if (!(command is FeatureCommand currentFeatureCommand))
                 {
                     continue;
                 }

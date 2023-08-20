@@ -25,13 +25,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core\iTin.Core.csproj" />
-    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Models\iTin.Core.Models.csproj" />
-    <ProjectReference Include="..\..\..\iTin.Registry\iTin.Registry.Windows\iTin.Registry.Windows.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\iTin\iTin.Core\iTin.Core.Models\src\iTin.Core.Models.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\iTin\iTin.Core\iTin.Core\src\iTin.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\iTin\iTin.Registry\iTin.Registry.Windows\src\iTin.Registry.Windows.csproj" />
   </ItemGroup>
 
   <ItemGroup>

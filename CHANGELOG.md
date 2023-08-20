@@ -2,11 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.5] - 
+## [1.0.5] - 2023-08-20
 
 ### Added
 
- 1. Add support for **netstandard2.1** 
+ 1. Multiple Repository is used.
+
+    In the image, I show my folder structure, in case it helps someone
+
+    ![multi-repo.png][mutli-repo] 
+
+ 2. Add support for **netstandard2.1** 
  
    - Add **SplitEnumerator** ref struct.
    
@@ -21,11 +27,11 @@ All notable changes to this project will be documented in this file.
     | Library | Version | Description |
     |:------|:------|:----------|
     | iTin.AspNet.Web.IIS | **1.0.0.5** | Internet Information Services Library Calls |
-    | iTin.Core | **2.0.0.6** | Base library containing various extensions, helpers, common constants |
-	| iTin.Core.IO | **1.0.0.2** | Common I/O calls |
-	| iTin.Core.Models | **1.0.0.3** | Data models base |
-    | iTin.Logging | **1.0.0.2** | Logging library |
-  	| iTin.Registry.Windows | **1.0.0.3** | Windows registry access |
+    | iTin.Core | **2.0.0.7** | Base library containing various extensions, helpers, common constants |
+    | iTin.Core.IO | **1.0.0.3** | Common I/O calls |
+    | iTin.Core.Models | **1.0.0.3** | Data models base |
+    | iTin.Logging | **1.0.0.3** | Logging library |
+    | iTin.Registry.Windows | **1.0.0.3** | Windows registry access |
  
  ### Added
 
@@ -51,10 +57,10 @@ All notable changes to this project will be documented in this file.
     |:------|:------|:----------|
     | iTin.AspNet.Web.IIS | **1.0.0.4** | Internet Information Services Library Calls |
     | iTin.Core| **2.0.0.3** | Base library containing various extensions, helpers, common constants |
-	| iTin.Core.IO | 1.0.0.0 | Common I/O calls |
-	| iTin.Core.Models | **1.0.0.1** | Data models base |
+    | iTin.Core.IO | 1.0.0.0 | Common I/O calls |
+    | iTin.Core.Models | **1.0.0.1** | Data models base |
     | iTin.Logging| **1.0.0.1** | Logging library |
-  	| iTin.Registry.Windows | **1.0.0.1** | Windows registry access |
+    | iTin.Registry.Windows | **1.0.0.1** | Windows registry access |
  
  ### Added
 
@@ -72,9 +78,9 @@ All notable changes to this project will be documented in this file.
 
 - Library removed for this version
 
-|Library|Version|Description|
-|:------|:------|:----------|
-|iTin.Core.Min| 1.0.0 | Common calls |
+    |Library|Version|Description|
+    |:------|:------|:----------|
+    |iTin.Core.Min| 1.0.0 | Common calls |
 
 ### Changed
 
@@ -82,14 +88,14 @@ All notable changes to this project will be documented in this file.
 
 - Library versions for this version
   
-| Library | Version | Description |
-|:------|:------|:----------|
-| iTin.Core | 2.0.0.0 | Base library containing various extensions, helpers, common constants |
-| iTin.Core.IO | 1.0.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
-| iTin.Core.Models | 1.0.0.0 | XML and Json Models classes |
-| iTin.Registry.Windows | 1.0.0.0 | Windows Registry Calls  |
-| iTin.AspNet.Web.IIS | **1.0.0.3** | Internet Information Services Library Calls |
-| iTin.Logging | 1.0.0.0 | Logging library |
+    | Library | Version | Description |
+    |:------|:------|:----------|
+    | iTin.Core | 2.0.0.0 | Base library containing various extensions, helpers, common constants |
+    | iTin.Core.IO | 1.0.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
+    | iTin.Core.Models | 1.0.0.0 | XML and Json Models classes |
+    | iTin.Registry.Windows | 1.0.0.0 | Windows Registry Calls  |
+    | iTin.AspNet.Web.IIS | **1.0.0.3** | Internet Information Services Library Calls |
+    | iTin.Logging | 1.0.0.0 | Logging library |
 
 ## [1.0.2] - 2020-08-04
 
@@ -117,14 +123,13 @@ All notable changes to this project will be documented in this file.
 
 - Library versions for this version
   
-|Library|Version|Description|
-|:------|:------|:----------|
-|iTin.Core.Min| 1.0.0 | Common calls |
-|iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
-|iTin.Core.Models| 1.0.0 | XML and Json Models classes |
-|iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
-|iTin.AspNet.Web.IIS| **1.0.2** | Internet Information Services Library Calls |
-
+    |Library|Version|Description|
+    |:------|:------|:----------|
+    |iTin.Core.Min| 1.0.0 | Common calls |
+    |iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
+    |iTin.Core.Models| 1.0.0 | XML and Json Models classes |
+    |iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
+    |iTin.AspNet.Web.IIS| **1.0.2** | Internet Information Services Library Calls |
 
 ## [1.0.1] - 2020-03-21
 
@@ -147,13 +152,13 @@ All notable changes to this project will be documented in this file.
 
 - Library versions for this version
   
-|Library|Version|Description|
-|:------|:------|:----------|
-|iTin.Core.Min| 1.0.0 | Common calls |
-|iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
-|iTin.Core.Models| 1.0.0 | XML and Json Models classes |
-|iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
-|iTin.AspNet.Web.IIS| **1.0.1** | Internet Information Services Library Calls |
+    |Library|Version|Description|
+    |:------|:------|:----------|
+    |iTin.Core.Min| 1.0.0 | Common calls |
+    |iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
+    |iTin.Core.Models| 1.0.0 | XML and Json Models classes |
+    |iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
+    |iTin.AspNet.Web.IIS| **1.0.1** | Internet Information Services Library Calls |
 
 ## [1.0.0] - 2020-01-27
 
@@ -179,13 +184,13 @@ All notable changes to this project will be documented in this file.
 
 - Library versions for this version
   
-|Library|Version|Description|
-|:------|:------|:----------|
-|iTin.Core.Min| 1.0.0 | Common calls |
-|iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
-|iTin.Core.Models| 1.0.0 | XML and Json Models classes |
-|iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
-|iTin.AspNet.Web.IIS| 1.0.0 | Internet Information Services Library Calls |
+    |Library|Version|Description|
+    |:------|:------|:----------|
+    |iTin.Core.Min| 1.0.0 | Common calls |
+    |iTin.Core.IO| 1.0.0 | IO Supports To Network Drives, Reletive Paths (~), Native IO |
+    |iTin.Core.Models| 1.0.0 | XML and Json Models classes |
+    |iTin.Registry.Windows| 1.0.0 | Windows Registry Calls  |
+    |iTin.AspNet.Web.IIS| 1.0.0 | Internet Information Services Library Calls |
 
 [1.0.5]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.5
 [1.0.4]: https://github.com/iAJTin/iIIS/releases/tag/v1.0.4
@@ -197,3 +202,4 @@ All notable changes to this project will be documented in this file.
 [Delivery 1.0.5]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.5
 [Delivery 1.0.4]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.4
 [Delivery 1.0.3]: https://github.com/iAJTin/iIIS/tree/master/src/deliverables/v1.0.3
+[mutli-repo]: ./assets/multi-repo.png "folder structure"

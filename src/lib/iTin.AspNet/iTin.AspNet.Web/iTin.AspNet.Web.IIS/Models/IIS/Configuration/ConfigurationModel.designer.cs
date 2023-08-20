@@ -1,13 +1,13 @@
 ﻿
+using System;
+using System.Diagnostics;
+using System.ComponentModel;
+using System.Xml.Serialization;
+
+using iTin.Core.Models;
+
 namespace iTin.AspNet.Web.IIS.Model
 {
-    using System;
-    using System.Diagnostics;
-    using System.ComponentModel;
-    using System.Xml.Serialization;
-
-    using iTin.Core.Models;
-
     [Serializable]
     [DebuggerStepThrough]
     [DesignerCategory("code")]
